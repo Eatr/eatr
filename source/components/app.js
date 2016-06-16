@@ -22,7 +22,7 @@ class App extends Component {
   render() {
 
     return (
-      <div>
+      <div id="app">
       {
         this.state.home ?
         <div>
@@ -35,3 +35,5 @@ class App extends Component {
       )
   }
 }
+
+export default App

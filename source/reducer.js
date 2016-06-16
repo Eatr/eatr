@@ -1,7 +1,21 @@
 import clone from 'clone';
+import { connect } from 'react-redux'
 
 const initialState = {
+	Restaurants: [{}, {}, {}],
+	Preferences: { 
+		Price: 0, 
+		distance:0, 
+		cuisine:[]
+	},
+	ShowDetail: false,
+	ShortList: {
+		restaurants: [{}, {}, {}],
+	},
+	Restaurant: {},
+	User: {
 
+	}
 }
 
 export default (state = initialState, action) => {
@@ -29,8 +43,5 @@ export default (state = initialState, action) => {
 		default :
 			return state
 
-
 	}
-
-
 }
