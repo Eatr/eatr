@@ -1,40 +1,24 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Splash from './Splash.jsx'
-import Navbar from './components/navbar.jsx'
-import Restaurant from './components/restaurant.jsx'
+import { Provider } from 'react-redux'
 
+import App from './components/App.jsx'
+import reducer from './reducer.js'
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.enterSite = this.enterSite.bind(this)
-    this.state = {
-      home: true,
-      user: null
-    }
-  }
-  enterSite() {
-    this.setState({ home: false})
-  }
-   
-  render() {
+import { createStore } from 'redux'
 
-    return (
-      <div>
-      {
-        this.state.home ?
-        <div>
-          <Splash enterSite={ this.enterSite }/>
-        </div> : <div>
-          <Navbar/>
-        </div>
-      }
-      </div>
-      )
-  }
+const store = createStore(reducer)
+
+const render = () => {
+  console.log('Foods up!')
+  ReactDOM.render(
+    <Provider store={ store } >
+      <App />
+    </Provider>,
+    document.getElementById('app')
+  )
 }
 
-console.log('Foods up!')
-ReactDOM.render(<App />, document.getElementById('app'))
+store.subscribe(render)
 
+render()
