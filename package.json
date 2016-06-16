@@ -4,7 +4,7 @@
   "description": "Find nice places to eat with a tinder like interface",
   "main": "index.js",
   "scripts": {
-    "dev:watch": "watchify source/client.js -o public/bundle.js -dv -t babelify",
+    "dev:watch": "watchify source/client.jsx -o public/bundle.js -dv -t babelify",
     "dev:server": "babel-node server.js --presets es2015,stage-2",
     "start": "clear & npm-run-all -p dev:*",
     "test": ""
