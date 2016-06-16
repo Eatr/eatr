@@ -5,6 +5,7 @@ import express 				  from  'express'
 import session     		  from  'express-session'
 import passport         from  'passport'
 import TwitterStrategy  from  'passport-twitter'
+import FacebookStrategy from  'passport-facebook'
 
 const app = express()
 
@@ -42,6 +43,19 @@ passport.use(new TwitterStrategy({
       return cb(null, profile)
   }
 ))
+passport.use( new FacebookStrategy({
+    clientID:     process.env.APP_ID,
+    clientSecret: process.env.APP_SECRET,
+    callbackURL:  "http://localhost:3000/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, cb) {
+    
+    var user = profile
+    console.log("Authenticated Facebook user")
+ 
+    return cb(null, user)
+  }
+))
 
 passport.serializeUser(function(user, done) {
   console.log("serializeUser")
@@ -61,7 +75,18 @@ app.get('/auth/twitter/callback',
   passport.authenticate('twitter', { failureRedirect: '/login' }),
   function(req, res) {
     res.redirect('/')
-  })
+  }
+)
+app.get('/auth/facebook', 
+  passport.authenticate('facebook'))
+  
+
+app.get('/auth/facebook/callback', 
+  passport.authenticate('facebook', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/')
+  }
+)
 
 
 app.listen(3000, function () {
