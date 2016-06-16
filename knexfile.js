@@ -1,21 +1,15 @@
-// Update with your config settings.
-
 module.exports = {
-
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: './dev.sqlite3'
-    }
-  },
-
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+      database: 'eatr'
     },
+    directory: './migrations/',
+    seeds: {
+      directory: './seeds/'
+    },
+    tableName: 'knex_migrations',
+    useNullAsDefault: true,
     pool: {
       min: 2,
       max: 10
@@ -26,19 +20,7 @@ module.exports = {
   },
 
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
+    client: 'pg',
+    connection: process.env.DATABASE_URL
   }
-
 };
