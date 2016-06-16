@@ -1,6 +1,6 @@
 import Promise from 'promise'
-import Dotenv from 'dotenv'
-import 'superagent'
+// import Dotenv from 'dotenv'
+// import superagent from 'superagent'
 
 const dotenv = Dotenv.config();
 
