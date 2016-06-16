@@ -11,7 +11,7 @@ const key = {
 export default function (lat, long) {
 	return new Promise (function(resolve, reject) {
 		request
-		  .get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-41.2865,174.7762&radius=500&type=restaurant&key=AIzaSyAGDxdzzLm0__nfcD7I4Bg2oD4aYyEbePA')
+		  .get('https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-41.2865,174.7762&radius=500&type=restaurant&key=')
 		  .end(console.log)	
 	})
 
