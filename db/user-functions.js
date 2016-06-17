@@ -18,9 +18,9 @@ export default (knex) => {
 			.catch(handleError)
 	}
 
-	const findUser = (user) => {
+	const findUser = (userId) => {
 		return knex('users')
-			.where('id', user.id)
+			.where('id', userId)
 			.select()
 			.catch(handleError)
 	}
@@ -40,6 +40,22 @@ export default (knex) => {
 			.catch(handleError)
 	}
 
+	const processUser = (cb, user) => {
+		return isUser(user.passportId)
+				.then((userDetails) => {
+					if (userDetails.exist) {
+						console.log('User exists: ', userDetails)
+						return cb(null, findUser(userDetails.id))
+					} else {
+						addUser (user)
+							.then((newId) => {
+								console.log('User added: ', user)
+								return cb(null, Object.assign({id: newId[0]}, user))
+							})
+					}
+				})
+	}
 
-	return {addUser, findUser, editUser, isUser}
+
+	return {addUser, findUser, editUser, isUser, processUser}
 }

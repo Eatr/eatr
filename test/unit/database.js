@@ -38,7 +38,7 @@ test('Should add and receive user', (t) => {
 	addUser(testUser)
 		.then( (response) => {
 			t.ok(response[0] === 1, 'user added')
-			findUser(Object.assign({id: response[0]}, testUser))
+			findUser(response[0])
 				.then((user) => {
 					t.equal(user[0].passportId, testUser.passportId, 'correct passportId returned from db')
 				})
@@ -55,7 +55,7 @@ test('Should add, edit and find user', (t) => {
 			let user = Object.assign({id: response[0]}, testUser)
 			let newShortlist = {shortlist: "abc"}
 			editUser(user, newShortlist)
-			findUser(user)
+			findUser(user.id)
 				.then((found) => {
 					t.equal(found[0].passportId, testUser.passportId, 'correct passportId returned from db')
 					t.equal(found[0].shortlist, newShortlist.shortlist, 'shortlist updated with new data')
