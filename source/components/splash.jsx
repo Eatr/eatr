@@ -15,6 +15,7 @@ class Splash extends Component {
   }
 
   render() {
+    console.log(this.props, "these are props")
     return (
       <div id='splash'>
         <h1>Eatr</h1>

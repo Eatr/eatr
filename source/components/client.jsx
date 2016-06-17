@@ -1,51 +1,52 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import Splash from './Splash.jsx'
-import Navbar from './components/navbar.jsx'
-import Restaurant from './components/restaurant.jsx'
-import findLocation from './helpers/get-location'
+// import React, { Component } from 'react'
+// import ReactDOM from 'react-dom'
+// import { Provider } from 'react-redux'
+// import App from './components/app.js'
+// import reducer from './reducer.js'
+// import { createStore } from 'redux'
 
 
+// const store = createStore(reducer)
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.enterSite = this.enterSite.bind(this)
-    this.state = {
-      home: true,
-      user: null
-    }
-  }
+// class App extends Component {
+//   constructor(props) {
+//     super(props)
+//     this.enterSite = this.enterSite.bind(this)
+//     this.state = {
+//       home: true,
+//       user: null
+//     }
+//   }
   
-  enterSite() {
-    this.setState({ home: false})
-  }
+//   enterSite() {
+//     this.setState({ home: false})
+//   }
 
-  componentWillMount () {
-    findLocation()
-      .then((response) => {
-        console.log(response)
-      })
-  }
+//   componentWillMount () {
+//     findLocation()
+//       .then((response) => {
+//         console.log(response)
+//       })
+//   }
 
    
-  render() {
+//   render() {
 
-    return (
-      <div>
-          <Navbar/>
-      {
-        this.state.home ?
-        <div>
-          <Splash enterSite={ this.enterSite }/>
-        </div> : <div>
-        </div>
-      }
-      </div>
-      )
-  }
-}
+//     return (
+//       <div>
+//         <Navbar/>
+//         <Splash />
+//       </div>
+//     )
+//   }
+// const render = () => {
+//   console.log('Foods up!')
+//   ReactDOM.render(
+//     <App store={ store }/>,
+//     document.getElementById('main')
+//   )
+// }
 
-console.log('Foods up!')
-ReactDOM.render(<App />, document.getElementById('app'))
+// store.subscribe(render)
 
+// render()
