@@ -1,0 +1,19 @@
+nav-icon {
+	height: 50px;
+	width: 50px;
+}
+
+#navbar {
+	display:flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+
+}
+
+
+
+/*nav {
+	display: inline-flex;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+}*/
