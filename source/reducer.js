@@ -1,6 +1,7 @@
 import clone from 'clone';
 import { connect } from 'react-redux'
 
+
 const initialState = {
 	Restaurants: [{}, {}, {}],
 	Preferences: { 
@@ -18,11 +19,13 @@ const initialState = {
 	}
 }
 
+
 export default (state = initialState, action) => {
 	let newState = clone(state)
 
 	switch (action.type) {
 		case 'UPDATE_RESTAURANTS' :
+		newState.Restaurants = action.state
 			return newState
 
 		case 'CHANGE_PREFERENCES' :
