@@ -34,18 +34,40 @@ const testUser = {
 	shortlist: JSON.stringify({"geometry" : {"location" : {"lat" : -41.2837453,"lng" : 174.776866}},"icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png","id" : "799330f3aa653f0acb27666bd5893592abc48a5f","name" : "Hotel ibis Wellington","opening_hours" : {"open_now" : true,"weekday_text" : []}})
 }
 
-test('should see console log', (t) => {
+test('Should add and receive user', (t) => {
 	//act : 
 	addUser(testUser)
 		.then( (response) => {
-			t.ok(response[0] === 1)
+			t.ok(response[0] === 1, 'user added')
 			findUser(Object.assign({id: response[0]}, testUser))
 				// .then(console.log)
 				.then((user) => {
-					console.log('user is ', user[0])
+					// console.log('user is ', user[0])
 					t.equal(user[0].passportId, testUser.passportId, 'correct passportId returned from db')
 				})
 
 		})
 		t.end()
 })
+
+test('Should add, edit and find user', (t) => {
+	//act : 
+	addUser(testUser)
+		.then( (response) => {
+			t.ok(response[0] === 1, 'user added')
+			let user = Object.assign({id: response[0]}, testUser)
+			let newShortlist = {shortlist: "abc"}
+			editUser(user, newShortlist)
+			findUser(user)
+				// .then(console.log)
+				.then((found) => {
+					// console.log('user is ', user[0])
+					t.equal(found[0].passportId, testUser.passportId, 'correct passportId returned from db')
+					t.equal(found[0].shortlist, newShortlist.shortlist, 'shortlist updated with new data')
+				})
+
+		})
+		t.end()
+
+})
+
