@@ -4,6 +4,12 @@ const handleError = (error) => {
 	} else return
 }
 
+const isEmpty= array => (array.length===0) ? 
+	{exist: false} : 
+	{ exist: true, id: array[0].id, passportId: array[0].passportId}
+
+
+
 export default (knex) => {
 	const addUser = (user) =>{
 		return knex('users')
@@ -26,6 +32,14 @@ export default (knex) => {
 			.catch(handleError)
 	}
 
+	const isUser = (passportId) => {
+		return knex('users')
+			.where('passportId', passportId)
+			.select('id', 'passportId')
+			.then(isEmpty)
+			.catch(handleError)
+	}
 
-	return {addUser, findUser, editUser}
+
+	return {addUser, findUser, editUser, isUser}
 }

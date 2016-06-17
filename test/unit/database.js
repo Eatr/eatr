@@ -5,13 +5,12 @@ import Knex from 'knex'
 const knex = Knex(knexConfig)
 
 import User from '../../db/user-functions.js'
-const {addUser, findUser, editUser} = User(knex)
+const {addUser, findUser, editUser, isUser} = User(knex)
 
 
 const test = redtape({
 	beforeEach: function(callback) {
 		return knex.migrate.latest()
-			// return knex.seed.run()
 			.then( function () {
 				console.log('test db migrated')
 				callback()
@@ -40,9 +39,7 @@ test('Should add and receive user', (t) => {
 		.then( (response) => {
 			t.ok(response[0] === 1, 'user added')
 			findUser(Object.assign({id: response[0]}, testUser))
-				// .then(console.log)
 				.then((user) => {
-					// console.log('user is ', user[0])
 					t.equal(user[0].passportId, testUser.passportId, 'correct passportId returned from db')
 				})
 
@@ -59,9 +56,7 @@ test('Should add, edit and find user', (t) => {
 			let newShortlist = {shortlist: "abc"}
 			editUser(user, newShortlist)
 			findUser(user)
-				// .then(console.log)
 				.then((found) => {
-					// console.log('user is ', user[0])
 					t.equal(found[0].passportId, testUser.passportId, 'correct passportId returned from db')
 					t.equal(found[0].shortlist, newShortlist.shortlist, 'shortlist updated with new data')
 				})
@@ -69,5 +64,27 @@ test('Should add, edit and find user', (t) => {
 		})
 		t.end()
 
+})
+
+test('Should check a user exists, and return the user or false', (t) => {
+	addUser(testUser)
+		.then( (userId) => {
+			isUser(testUser.passportId)
+			.then((response) => {
+				t.ok(response.exist, 'user check returns true')
+				t.equal(response.passportId, testUser.passportId, "returns correct passport id")
+				t.equal(response.id, userId[0], "returns correct user id")
+			})
+		})
+		t.end()
+
+})
+
+test('Should check a user exists, and return it or false', (t) => {
+	isUser(1324656)
+	.then((response) => {
+		t.notOk(response.exist, 'user check returns false')
+	})
+	t.end()
 })
 
