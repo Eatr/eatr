@@ -35,9 +35,15 @@ export default (state = initialState, action) => {
 			return newState
 
 		case 'ADD_TO_SHORTLIST' :
+		newState.ShortList.restaurants.push(action.state)
 			return newState
 
 		case 'REMOVE_FROM_SHORTLIST' :
+		/*newState.ShortList.restraurants.filter((restaurant) => {
+			if(restaurant.id !== action.id) {
+				return restaurant
+			}
+		})*/ 
 			return newState
 
 		case 'CHANGE_RESTAURANT' :

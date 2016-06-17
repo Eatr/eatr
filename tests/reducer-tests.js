@@ -29,7 +29,7 @@ const testInitialState = {
 	},
 	ShowDetail: false,
 	ShortList: {
-		restaurants: [{}, {}, {}],
+		restaurants: [],
 	},
 	Restaurant: {},
 	User: {
@@ -83,7 +83,7 @@ test('update restaurants', function (t) {
 		},
 		ShowDetail: false,
 		ShortList: {
-			restaurants: [{}, {}, {}],
+			restaurants: [],
 		},
 		Restaurant: {},
 		User: {
@@ -99,18 +99,70 @@ test('update restaurants', function (t) {
 
 })
 
-test('update restaurants', function (t) {
+test('add to shortlist', function (t) {
 	//arrange
-	//action
-	let testActionObj = {
-			type: 'CHANGE_PREFERENCES',
-			state: testInitialState,
-			id: 1
+	let restaurantAddShortlist = 
+	{
+			name: 'shortlist1',
+			website: 'http://shortlist1.com',
+			phone: '346346',
+			distance: 421
 		}
-	let testNewState = reducer(testInitialState, testActionObj)
-	
+
+	let testActionObj = {
+			type: 'ADD_TO_SHORTLIST',
+			state: restaurantAddShortlist,
+			id: 1
+	}
+
+	let expectedNewState = {
+		Restaurants: [
+		{
+			name: 'testname',
+			website: 'http://testwebsiteurl.com',
+			phone: '08008888',
+			distance: 100
+		},
+		{
+			name: 'testname1',
+			website: 'http://testwebsiteurl1.com',
+			phone: '080088881',
+			distance: 101
+		},
+		{
+			name: 'testname2',
+			website: 'http://testwebsiteurl2.com',
+			phone: '080088882',
+			distance: 102
+		}
+	],
+		Preferences: { 
+			Price: 0, 
+			distance:0, 
+			cuisine:['indian', 'italian', 'chinese']
+		},
+		ShowDetail: false,
+		ShortList: {
+			restaurants: [
+			{
+				name: 'shortlist1',
+				website: 'http://shortlist1.com',
+				phone: '346346',
+				distance: 421
+			}
+			],
+		},
+		Restaurant: {},
+		User: {
+
+		}
+	}
+	//action
+	let actualNewState = reducer(testInitialState, testActionObj)
 	//assert
-	t.ok(testNewState, "something is returned")
+	t.ok(actualNewState, "something is returned")
+	t.deepEqual(expectedNewState, actualNewState, "new restaurant added to shortlist")
+	t.true(actualNewState.ShortList.restaurants.length > testInitialState.ShortList.restaurants.length, "shortlist increases in length")
 	t.end()
 
 })
