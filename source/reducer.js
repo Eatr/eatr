@@ -25,28 +25,31 @@ export default (state = initialState, action) => {
 
 	switch (action.type) {
 		case 'UPDATE_RESTAURANTS' :
-		newState.Restaurants = action.state
+			newState.Restaurants = action.state
 			return newState
 
 		case 'CHANGE_PREFERENCES' :
+			newState.Preferences = action.state 
 			return newState
 
 		case 'CHANGE_VIEW_DETAIL' :
+			newState.ShowDetail = action.state 
 			return newState
 
 		case 'ADD_TO_SHORTLIST' :
-		newState.ShortList.restaurants.push(action.state)
+			newState.ShortList.restaurants.push(action.state)
 			return newState
 
 		case 'REMOVE_FROM_SHORTLIST' :
-		/*newState.ShortList.restraurants.filter((restaurant) => {
-			if(restaurant.id !== action.id) {
-				return restaurant
-			}
-		})*/ 
-			return newState
+			newState.ShortList.restraurants.filter((restaurant) => {
+				if(restaurant.id !== action.id) {
+					return restaurant
+				} 
+			})  
+					return newState
 
 		case 'CHANGE_RESTAURANT' :
+			newState.Restaurant = action.state 
 			return newState
 
 		default :
