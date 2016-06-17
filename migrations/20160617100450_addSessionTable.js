@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
 	return knex.schema.createTableIfNotExists('sessions', function (table) {
-	  table.integer('id')
+	  table.bigInteger('id')
 	  table.string('name')
 	})
 }
