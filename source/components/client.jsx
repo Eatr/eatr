@@ -33,12 +33,12 @@ class App extends Component {
 
     return (
       <div>
+          <Navbar/>
       {
         this.state.home ?
         <div>
           <Splash enterSite={ this.enterSite }/>
         </div> : <div>
-          <Navbar/>
         </div>
       }
       </div>
