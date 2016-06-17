@@ -49,6 +49,7 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-twitter": "^1.0.4",
+    "query-string": "^4.2.2",
     "react": "^15.1.0",
     "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.1.0",
