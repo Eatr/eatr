@@ -41,14 +41,7 @@ export default class App extends Component {
   }
 }
 
-// const render = () => {
-//   console.log('Foods up!')
-//   ReactDOM.render(
-//     <App store={ store }/>,
-//     document.getElementById('main')
-//   )
-// }
 
 // store.subscribe(render)
 
-// render()
+
