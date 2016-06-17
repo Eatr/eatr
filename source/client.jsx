@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import Splash from './Splash.jsx'
 import Navbar from './components/navbar.jsx'
 import Restaurant from './components/restaurant.jsx'
+import findLocation from './helpers/get-location'
+
 
 
 class App extends Component {
@@ -14,9 +16,18 @@ class App extends Component {
       user: null
     }
   }
+  
   enterSite() {
     this.setState({ home: false})
   }
+
+  componentWillMount () {
+    findLocation()
+      .then((response) => {
+        console.log(response)
+      })
+  }
+
    
   render() {
 
