@@ -37,6 +37,7 @@ const testInitialState = {
 	}
 }
 
+//---------UPDATE_RESTAURANTS--------
 test('update restaurants', function (t) {
 	//arrange
 	//action
@@ -99,6 +100,7 @@ test('update restaurants', function (t) {
 
 })
 
+//---------AAD_TO_SHORTLIST--------
 test('add to shortlist', function (t) {
 	//arrange
 	let restaurantAddShortlist = 
@@ -164,5 +166,52 @@ test('add to shortlist', function (t) {
 	t.deepEqual(expectedNewState, actualNewState, "new restaurant added to shortlist")
 	t.true(actualNewState.ShortList.restaurants.length > testInitialState.ShortList.restaurants.length, "shortlist increases in length")
 	t.end()
+
+//---------CHANGE_PREFERENCES--------
+test('preferences changed', function (t) {
+	//arrange
+	let preferencesChanged = {
+		Price: 2, 
+		distance:20, 
+		cuisine:['italian', 'chinese']
+	}
+	//action
+	let testActionObj = {
+			type: 'CHANGE_PREFERENCES',
+			state: preferencesChanged,
+			id: 1
+	}
+
+	let actualNewState = reducer(testInitialState, testActionObj)
+	//assert
+	t.ok(actualNewState, "something is returned")
+	t.notDeepEqual(actualNewState.Preferences === testInitialState.Preferences, "preferences has changed")
+	t.end()
+})
+
+
+//---------CHANGE_VIEW_DETAIL--------
+test('change view detail', function (t) {
+	//arrange
+	let viewDetailsChanged = {
+		ShowDetail: true,
+	}
+	//action
+	let testActionObj = {
+			type: 'CHANGE_VIEW_DETAIL',
+			state: viewDetailsChanged,
+			id: 1
+	}
+	let actualNewState = reducer(testInitialState, testActionObj)
+	//assert
+	t.ok(actualNewState, "something is returned")
+	t.notDeepEqual(actualNewState === testInitialState, "view has changed")
+	t.deepEqual(actualNewState.ShowDetail, {
+		ShowDetail: true,
+	})
+
+	t.end()
+})
+
 
 })

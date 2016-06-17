@@ -29,11 +29,11 @@ export default (state = initialState, action) => {
 			return newState
 
 		case 'CHANGE_PREFERENCES' :
-			newState.Preferences = action.state 
+			newState.Preferences = action.state
 			return newState
 
 		case 'CHANGE_VIEW_DETAIL' :
-			newState.ShowDetail = action.state 
+			newState.ShowDetail = action.state
 			return newState
 
 		case 'ADD_TO_SHORTLIST' :
