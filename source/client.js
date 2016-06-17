@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 // import ReactDOM from 'react-dom'
-// import Splash from './Splash.jsx'
-// import Navbar from './components/navbar.jsx'
+import Splash from './Splash.jsx'
+import Navbar from './components/navbar.jsx'
 // import Restaurant from './components/restaurant.jsx'
 import findLocation from './helpers/get-location'
 import {Link} from 'react-router'
@@ -10,20 +10,17 @@ import {Link} from 'react-router'
 
 export default () => {
   return (
-    <div>
-    hello
-      <ul role="nav">
-       <li><Link to="/filter">Filter</Link></li>
-       <li><Link to="/shortlist">Shortlist</Link></li>
-       <li><Link to="/login">Login</Link></li>
-      </ul>
-
-      <div>
-        splash
-      </div>    
-    </div>
+    <div id="client">
+      <Navbar/>
+      <Splash />
+    </div>    
   )
 }
+      //<ul role="nav">
+      // <li><Link to="/filter">Filter</Link></li>
+     //  <li><Link to="/shortlist">Shortlist</Link></li>
+     //  <li><Link to="/login">Login</Link></li>
+    //  </ul>
       
   // constructor(props) {
   //   super(props)
