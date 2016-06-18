@@ -1,67 +1,44 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import reducer from '../reducer.js'
-
-import findLocation from '../helpers/get-location.js'
-import Navbar from './navbar.jsx'
-import Splash from './splash.jsx'
-import request from 'browser-request'
-import Restaurant from './restaurant.jsx'
-
+import {connect} from 'react-redux'
+import * as actionCreators from '../action-creators';
 import { createStore } from 'redux'
 
-const store = createStore(reducer)
+// import Navbar from './navbar.jsx'
+import Restaurant from './restaurant.jsx'
 
+export class App extends Component {
 
-export default class App extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
-    this.enterSite = this.enterSite.bind(this)
-    this.state = {
-      home: true,
-      user: null
-    }
   }
   
-  enterSite() {
-    this.setState({ home: false})
+  handleClick () {
+   console.log("button has been clicked - app.jsx")
+
   }
-
-  componentWillMount () {
-    // findLocation()
-    //   .then((loc) => {
-    //     console.log(loc)
-
-
-    //     request({method: 'GET', url:`/restaurants/${loc[0]}/${loc[1]}`, body: '{"relaxed":true}', json: true}, function(err, res) {
-    //       if (err) {
-    //         console.log("this didn't work", err)
-    //       } else {
-    //         console.log(JSON.parse(res.response))
-    //         //these results need to be added to the state
-    //       }
-    //     })
-    //   })
-  }
-
    
   render() {
-    console.log(this.props, "*****")
-
+    
     return (
-      <div  >
-        <Navbar />
-       <Restaurant state={ store.getState().Restaurant } store={ store } /> 
-      </div>
+        <Restaurant {...this.props} /> 
     )
   }
 }
 
-store.subscribe(App)
+function mapStateToProps (state) {
+  return {
+    restaurant: state.Restaurant
+  }
+}
+
+export const AppContainer = connect(
+  mapStateToProps, 
+  actionCreators
+  )(App)
 
 
 
 
 
 
+        // <Navbar />

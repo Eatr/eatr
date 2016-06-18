@@ -13,10 +13,21 @@ const INITIALSTATE = {
 	ShortList: {
 		restaurants: [{}, {}, {}],
 	},
-	Restaurant: restaurantArray[0],
+	Restaurant: {
+		restaurant: restaurantArray[0],
+		index: 0
+	},
 	User: {
 
 	}
+}
+
+const changeRestaurant = (state) => {
+	return {
+		restaurant: state.Restaurants[state.Restaurant.index ++ ],
+		index: state.Restaurant.index ++
+	}
+
 }
 
 
@@ -41,7 +52,7 @@ export default (state = INITIALSTATE, action) => {
 			return newState
 
 		case 'REMOVE_FROM_SHORTLIST' :
-			newState.ShortList.restraurants.filter((restaurant) => {
+			newState.ShortList.restaurants.filter((restaurant) => {
 				if(restaurant.id !== action.id) {
 					return restaurant
 				} 
@@ -49,7 +60,8 @@ export default (state = INITIALSTATE, action) => {
 					return newState
 
 		case 'CHANGE_RESTAURANT' :
-			newState.Restaurant = action.state 
+			newState.Restaurant = action.index
+ 
 			return newState
 
 		default :
