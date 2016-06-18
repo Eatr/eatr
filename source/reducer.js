@@ -1,9 +1,8 @@
 import clone from 'clone';
 import { connect } from 'react-redux'
 import {restaurantArray} from './helpers/restaurant-test-array.js'
-console.log(restaurantArray)
 
-const initialState = {
+const INITIALSTATE = {
 	Restaurants: restaurantArray,
 	Preferences: { 
 		Price: 0, 
@@ -14,14 +13,14 @@ const initialState = {
 	ShortList: {
 		restaurants: [{}, {}, {}],
 	},
-	Restaurant: {},
+	Restaurant: restaurantArray[0],
 	User: {
 
 	}
 }
 
 
-export default (state = initialState, action) => {
+export default (state = INITIALSTATE, action) => {
 	let newState = clone(state)
 
 	switch (action.type) {

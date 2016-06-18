@@ -2,13 +2,17 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import reducer from '../reducer.js'
-import { createStore } from 'redux'
+
 import findLocation from '../helpers/get-location.js'
 import Navbar from './navbar.jsx'
 import Splash from './splash.jsx'
 import request from 'browser-request'
+import Restaurant from './restaurant.jsx'
+
+import { createStore } from 'redux'
 
 const store = createStore(reducer)
+
 
 export default class App extends Component {
   constructor(props) {
@@ -43,17 +47,21 @@ export default class App extends Component {
 
    
   render() {
+    console.log(this.props, "*****")
 
     return (
-      <div>
+      <div  >
         <Navbar />
-        <Splash />
+       <Restaurant state={ store.getState() } store={ store } /> 
       </div>
     )
   }
 }
 
+store.subscribe(App)
 
-// store.subscribe(render)
+
+
+
 
 
