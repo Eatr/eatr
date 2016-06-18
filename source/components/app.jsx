@@ -5,23 +5,26 @@ import { createStore } from 'redux'
 
 import Navbar from './navbar.jsx'
 import Restaurant from './restaurant.jsx'
+import YeahNahBar from './yeah-nah-bar.jsx'
+
 
 export class App extends Component {
 
   constructor (props) {
     super(props)
   }
-  
+
   handleClick () {
    console.log("button has been clicked - app.jsx")
 
   }
-   
+
   render() {
     return (
       <div>
         <Navbar />
-        <Restaurant {...this.props} /> 
+        <Restaurant {...this.props} />
+        <YeahNahBar {...this.props} />
       </div>
     )
   }
@@ -34,7 +37,7 @@ function mapStateToProps (state) {
 }
 
 export const AppContainer = connect(
-  mapStateToProps, 
+  mapStateToProps,
   actionCreators
   )(App)
 
