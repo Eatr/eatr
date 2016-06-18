@@ -61,7 +61,10 @@ export default (state = INITIALSTATE, action) => {
 					return newState
 
 		case 'CHANGE_RESTAURANT' :
-			newState.Restaurant.index = action.index
+			newState.Restaurant = {
+				index: action.index,
+				restaurant: newState.Restaurants[action.index]
+			}
  
 			return newState
 
