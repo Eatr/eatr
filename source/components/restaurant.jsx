@@ -9,8 +9,7 @@ export default class Restaurant extends React.Component {
 	
 	render  () {
 		const r = this.props.restaurant
-		console.log("************************")
-		console.log(this.props)
+		
 		return (
 			<div id="restaurant-container" >
 				<img src={r.restaurant.photo} />

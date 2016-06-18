@@ -32,7 +32,7 @@ const changeRestaurant = (state) => {
 
 
 export default (state = INITIALSTATE, action) => {
-	console.log('action is , ', action)
+	
 	let newState = clone(state)
 
 	switch (action.type) {
