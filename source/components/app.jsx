@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import * as actionCreators from '../action-creators';
 import { createStore } from 'redux'
 
-// import Navbar from './navbar.jsx'
+import Navbar from './navbar.jsx'
 import Restaurant from './restaurant.jsx'
 
 export class App extends Component {
@@ -19,7 +19,10 @@ export class App extends Component {
    
   render() {
     return (
+      <div>
+        <Navbar />
         <Restaurant {...this.props} /> 
+      </div>
     )
   }
 }
