@@ -7,7 +7,6 @@ import Navlink from './navlink.jsx'
 
 class Filter extends Component {
 
-
   componentWillMount() {
     this.userPref = Object.assign({}, this.props.preferences)
   }
@@ -49,7 +48,6 @@ class Filter extends Component {
     )
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {

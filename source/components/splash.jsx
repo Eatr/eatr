@@ -9,9 +9,7 @@ class Splash extends Component {
 
   render() {
     return (
-      <div id='splash'>
-        <button id='home-btn' onClick={ this.handleClick }>Burger Pacman Animation!</button>
-      </div>
+      <p>Finding Restaurants...</p>
     )
   }
 }
