@@ -6,12 +6,12 @@
 // 	}
 // }
 
-// export const changePreferences = (newPreferences) => {
-// 	return {
-// 		type: 'CHANGE_PREFERENCES',
-// 		state: newPreferences
-// 	}
-// }
+export const changePreferences = (newPreferences) => {
+	return {
+		type: 'CHANGE_PREFERENCES',
+		state: newPreferences
+	}
+}
 
 // export const changeViewDetail = (bool) => {
 // 	return {

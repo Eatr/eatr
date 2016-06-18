@@ -5,9 +5,10 @@ import {restaurantArray} from './helpers/restaurant-test-array.js'
 const INITIALSTATE = {
 	Restaurants: restaurantArray,
 	Preferences: { 
-		Price: 0, 
-		distance:0, 
-		cuisine:[]
+		price: 30, 
+		distance:500, 
+		cuisine:[],
+		updated: true
 	},
 	ShowDetail: false,
 	ShortList: {

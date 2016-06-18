@@ -9,6 +9,7 @@ export default class Shortlist extends Component {
 
 	render () {
 		const shortlist = this.props.shortlist.restaurants
+		console.log(shortlist)
 		return (<p>Hello this is shortlist. </p>)
 	}
 }
@@ -19,7 +20,7 @@ export default class Shortlist extends Component {
 
 
 
-function mapStateToProps (state) {
+const mapStateToProps =  (state) => {
   return {
     shortlist: state.ShortList
   }
