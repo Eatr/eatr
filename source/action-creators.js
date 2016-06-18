@@ -21,12 +21,12 @@
 // }
 
 
-// export const addToShortlist = (restaurant) => {
-// 	return {
-// 		type: 'ADD_TO_SHORTLIST',
-// 		state: restaurant
-// 	}
-// }
+export const addToShortlist = (restaurant) => {
+	return {
+		type: 'ADD_TO_SHORTLIST',
+		state: restaurant
+	}
+}
 
 // export const removeFromShortList = (restaurant) => {
 // 	return {

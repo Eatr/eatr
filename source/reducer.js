@@ -50,6 +50,8 @@ export default (state = INITIALSTATE, action) => {
 
 		case 'ADD_TO_SHORTLIST' :
 			newState.ShortList.restaurants.push(action.state)
+			console.log("-----------------------")
+			console.log(newState.ShortList)
 			return newState
 
 		case 'REMOVE_FROM_SHORTLIST' :
