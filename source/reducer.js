@@ -11,7 +11,7 @@ const INITIALSTATE = {
 	},
 	ShowDetail: false,
 	ShortList: {
-		restaurants: [{}, {}, {}],
+		restaurants: [],
 	},
 	Restaurant: {
 		restaurant: restaurantArray[0],
@@ -32,7 +32,7 @@ const changeRestaurant = (state) => {
 
 
 export default (state = INITIALSTATE, action) => {
-	console.log('action is , ', action)
+	
 	let newState = clone(state)
 
 	switch (action.type) {
