@@ -25,20 +25,20 @@ export default class App extends Component {
   }
 
   componentWillMount () {
-    findLocation()
-      .then((loc) => {
-        console.log(loc)
+    // findLocation()
+    //   .then((loc) => {
+    //     console.log(loc)
 
 
-        request({method: 'GET', url:`/restaurants/${loc[0]}/${loc[1]}`, body: '{"relaxed":true}', json: true}, function(err, res) {
-          if (err) {
-            console.log("this didn't work", err)
-          } else {
-            console.log(JSON.parse(res.response))
-            //these results need to be added to the state
-          }
-        })
-      })
+    //     request({method: 'GET', url:`/restaurants/${loc[0]}/${loc[1]}`, body: '{"relaxed":true}', json: true}, function(err, res) {
+    //       if (err) {
+    //         console.log("this didn't work", err)
+    //       } else {
+    //         console.log(JSON.parse(res.response))
+    //         //these results need to be added to the state
+    //       }
+    //     })
+    //   })
   }
 
    

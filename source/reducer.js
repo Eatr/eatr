@@ -1,9 +1,10 @@
 import clone from 'clone';
 import { connect } from 'react-redux'
-
+import {restaurantArray} from './helpers/restaurant-test-array.js'
+console.log(restaurantArray)
 
 const initialState = {
-	Restaurants: [{}, {}, {}],
+	Restaurants: restaurantArray,
 	Preferences: { 
 		Price: 0, 
 		distance:0, 
