@@ -32,6 +32,7 @@ const changeRestaurant = (state) => {
 
 
 export default (state = INITIALSTATE, action) => {
+	console.log('action is , ', action)
 	let newState = clone(state)
 
 	switch (action.type) {
@@ -60,7 +61,7 @@ export default (state = INITIALSTATE, action) => {
 					return newState
 
 		case 'CHANGE_RESTAURANT' :
-			newState.Restaurant = action.index
+			newState.Restaurant.index = action.index
  
 			return newState
 

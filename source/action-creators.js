@@ -36,9 +36,10 @@
 // }
 
 export const changeRestaurant = (index) => {
+	console.log('action creator, ', index)
 	return {
 		type: 'CHANGE_RESTAURANT',
-		index
+		index: index
 	}
 }
 
