@@ -1,9 +1,8 @@
 import clone from 'clone';
 import { connect } from 'react-redux'
 import {restaurantArray} from './helpers/restaurant-test-array.js'
-console.log(restaurantArray)
 
-const initialState = {
+const INITIALSTATE = {
 	Restaurants: restaurantArray,
 	Preferences: { 
 		Price: 0, 
@@ -14,14 +13,26 @@ const initialState = {
 	ShortList: {
 		restaurants: [{}, {}, {}],
 	},
-	Restaurant: {},
+	Restaurant: {
+		restaurant: restaurantArray[0],
+		index: 0
+	},
 	User: {
 
 	}
 }
 
+const changeRestaurant = (state) => {
+	return {
+		restaurant: state.Restaurants[state.Restaurant.index ++ ],
+		index: state.Restaurant.index ++
+	}
 
-export default (state = initialState, action) => {
+}
+
+
+export default (state = INITIALSTATE, action) => {
+	console.log('action is , ', action)
 	let newState = clone(state)
 
 	switch (action.type) {
@@ -42,7 +53,7 @@ export default (state = initialState, action) => {
 			return newState
 
 		case 'REMOVE_FROM_SHORTLIST' :
-			newState.ShortList.restraurants.filter((restaurant) => {
+			newState.ShortList.restaurants.filter((restaurant) => {
 				if(restaurant.id !== action.id) {
 					return restaurant
 				} 
@@ -50,7 +61,11 @@ export default (state = initialState, action) => {
 					return newState
 
 		case 'CHANGE_RESTAURANT' :
-			newState.Restaurant = action.state 
+			newState.Restaurant = {
+				index: action.index,
+				restaurant: newState.Restaurants[action.index]
+			}
+ 
 			return newState
 
 		default :
