@@ -12,11 +12,11 @@ export class App extends Component {
     super(props)
   }
   
-  handleClick () {
-   console.log("button has been clicked - app.jsx")
-
+  componentWillMount() {
+    this.props.preferences.updated ? console.log('app sees user preferences: ', this.props.preferences) :
+    console.log('no change in preferences')
   }
-   
+
   render() {
     return (
       <div>
@@ -30,6 +30,7 @@ export class App extends Component {
 function mapStateToProps (state) {
   return {
     restaurant: state.Restaurant,
+    preferences: state.Preferences
   }
 }
 
