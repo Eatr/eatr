@@ -18,7 +18,6 @@ export class App extends Component {
   }
    
   render() {
-    
     return (
         <Restaurant {...this.props} /> 
     )
