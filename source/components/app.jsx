@@ -42,6 +42,7 @@ export class App extends Component {
         <div>
           <Navbar />
           <Restaurant {...this.props} />
+          <YeahNahBar {...this.props} />
         </div>
       )
     }
