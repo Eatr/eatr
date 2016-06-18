@@ -52,7 +52,7 @@ export default class App extends Component {
     return (
       <div  >
         <Navbar />
-       <Restaurant state={ store.getState() } store={ store } /> 
+       <Restaurant state={ store.getState().Restaurant } store={ store } /> 
       </div>
     )
   }
