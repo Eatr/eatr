@@ -29,7 +29,7 @@ export class App extends Component {
 
 function mapStateToProps (state) {
   return {
-    restaurant: state.Restaurant
+    restaurant: state.Restaurant,
   }
 }
 
