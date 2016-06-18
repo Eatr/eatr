@@ -3,6 +3,7 @@ import { Link } from 'react-router'
 import Navlink from './navlink.jsx'
 
 export default () => {
+
 	return (
     <nav id='navbar'>
   		<Navlink to='/filter'>
@@ -16,4 +17,5 @@ export default () => {
       </Navlink>
   	</nav>
   )
+
 }
