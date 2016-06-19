@@ -63,6 +63,7 @@
 	#restaurant-container{
 	  display: flex;
 	  flex-direction: column;
+	  max-height: 350px;
 	  
 
 
@@ -73,7 +74,7 @@
       flex-direction: column;
     
 	  width: 275px;
-	  min-height: 400px;
+	  min-height: 285px;
 	  padding-top: 5px;
 
 	  -webkit-box-shadow: 6px 7px 17px -1px rgba(0,0,0,0.65);
@@ -93,14 +94,16 @@
 
 	#restaurant-image {
 	  width: 95%;
-    height: 350px;
+    height: 200px;
 
 	}
 
 
 	/*yeah nah bar*/
 
-
+	.yeahnah-button{
+		width: 50px;
+	}
 	#yeahnah-container {
 	  display: flex;
 	  flex-wrap: nowrap;
