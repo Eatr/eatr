@@ -10,13 +10,13 @@ const INITIALSTATE = {
 		cuisine:[],
 		updated: true
 	},
-	ShowDetail: false,
 	ShortList: {
 		restaurants: [],
 	},
 	Restaurant: {
 		restaurant: {},
-		index: 0
+		index: 0,
+		ShowDetail: false
 	},
 	User: {
 
@@ -55,7 +55,7 @@ export default (state = INITIALSTATE, action) => {
 			return newState
 
 		case 'CHANGE_VIEW_DETAIL' :
-			newState.ShowDetail = action.state
+			newState.Restaurant.ShowDetail = !newState.Restaurant.ShowDetail
 			return newState
 
 		case 'ADD_TO_SHORTLIST' :

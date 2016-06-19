@@ -13,12 +13,11 @@ export const changePreferences = (newPreferences) => {
 	}
 }
 
-// export const changeViewDetail = (bool) => {
-// 	return {
-// 		type: 'CHANGE_VIEW_DETAIL',
-// 		state: bool
-// 	}
-// }
+export const changeViewDetail = () => {
+	return {
+		type: 'CHANGE_VIEW_DETAIL'
+	}
+}
 
 
 export const addToShortlist = (restaurant) => {
