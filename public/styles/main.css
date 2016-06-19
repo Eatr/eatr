@@ -26,7 +26,15 @@ align-items: center;
 #distance-slider {
   padding: 20px;
 }
+/* logo hearder area*/
+#top-header{
+  display: flex;
+  justify-content: center;
+}
 
+#eater-logo{
+
+}
 
 
 /*restaurant component*/
