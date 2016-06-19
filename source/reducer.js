@@ -12,7 +12,7 @@ const INITIALSTATE = {
 	},
 	ShowDetail: false,
 	ShortList: {
-		restaurants: [restaurantArray[4], restaurantArray[5], restaurantArray[6]],
+		restaurants: [],
 	},
 	Restaurant: {
 		restaurant: restaurantArray[0],

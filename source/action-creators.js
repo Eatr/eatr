@@ -22,6 +22,7 @@ export const changePreferences = (newPreferences) => {
 
 
 export const addToShortlist = (restaurant) => {
+	console.log("Restaurant added to shortlist")
 	return {
 		type: 'ADD_TO_SHORTLIST',
 		state: restaurant

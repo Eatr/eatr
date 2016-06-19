@@ -40,20 +40,29 @@ export default (knex) => {
 			.catch(handleError)
 	}
 
-	const processUser = (cb, user) => {
-		return isUser(user.passportId)
-				.then((userDetails) => {
-					if (userDetails.exist) {
-						console.log('User exists: ', userDetails)
-						return cb(null, findUser(userDetails.id))
-					} else {
-						addUser (user)
-							.then((newId) => {
-								console.log('User added: ', user)
-								return cb(null, Object.assign({id: newId[0]}, user))
-							})
-					}
-				})
+	const processUser = (user) => {
+		return new Promise ((resolve, reject) => {
+			return isUser(user.passportId)
+					.then((userDetails) => {
+						if (userDetails.exist) {
+							console.log('hella')
+							return findUser(userDetails.id)
+								.then( (user) => {
+										return findUser(userDetails.id)
+											.then((user) => {
+												resolve(user)
+											})
+								})
+						} else {
+							console.log('hello')
+							addUser (user)
+								.then((newId) => {
+									resolve( Object.assign({id: newId[0]}, user) )
+								})
+						}
+					})
+				
+			})
 	}
 
 
