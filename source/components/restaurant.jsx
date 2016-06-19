@@ -15,7 +15,9 @@ export default class Restaurant extends React.Component {
 		return (
 			<div id="restaurant-container" >
 				<div id="restaurant-card">
-					<img id="restaurant-image" src={r.restaurant.photo} />
+					<div id="img-window">
+						<img id="restaurant-image" src={r.restaurant.photo} />
+					</div>
 					<div className="restaurant-details-container">
 						<h3 className="restaurant-details-short">{r.restaurant.name}</h3>
 						<p className="restaurant-details-long"></p>
