@@ -5,6 +5,8 @@ import Slider from 'rc-slider'
 import Navlink from './navlink.jsx'
 import {PriceContainer} from './price.jsx'
 import {DistanceContainer} from './distance.jsx'
+import Navbar from './navbar.jsx'
+
 class Filter extends Component {
 
   componentWillMount() {
@@ -24,6 +26,7 @@ class Filter extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <DistanceContainer />
         <Navlink to='/'>
           <button id='btn-done' onClick={ () => (this.handleClick()) }>
