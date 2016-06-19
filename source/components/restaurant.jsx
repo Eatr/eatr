@@ -13,8 +13,8 @@ export default class Restaurant extends React.Component {
 		const r = this.props.restaurant
 
 		return (
-		  <Swipeable onSwipingLeft={	() => this.props.changeRestaurant(r.index + 1)  }
-		  	onSwipingRight={() => [this.props.addToShortlist(r.restaurant), this.props.changeRestaurant(r.index + 1)].map((action) => action ) }>
+		  <Swipeable delta={50} onSwipedLeft={	() => this.props.changeRestaurant(r.index + 1)  }
+		  	onSwipedRight={() => [this.props.addToShortlist(r.restaurant), this.props.changeRestaurant(r.index + 1)].map((action) => action ) }>
 				<div id="restaurant-container" >
 					<div id="restaurant-card">
 						<img id="restaurant-image" src={r.restaurant.photo} />
