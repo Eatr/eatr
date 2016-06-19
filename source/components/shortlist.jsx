@@ -7,23 +7,23 @@ export default class Shortlist extends Component {
 		super(props)
 	}
 
-	handleClick(restaurant) {
-		console.log('button clicked', restaurant)
+	handleClick(restaurantId) {
+		console.log(this.props)
+		this.props.removeFromShortList(restaurantId)
 	}
 
 	render () {
 		const shortlist = this.props.shortlist.restaurants
-		console.log(shortlist)
 
 		return (
 			<main id='shortlist'>
 			{
-				shortlist.map((restaurant) => {
+				!(shortlist) ? "" : shortlist.map((restaurant) => {
 					return (
 						<div	className="shortlist-restaurant">
 							<img className="SL-item" src={restaurant.photo}/>
 							<h6  className="SL-detail">{restaurant.name}</h6>
-							<button ref={restaurant.name} className="SL-item remove-restaurant" onClick={()=>{this.handleClick(this.refs)}}>
+							<button className="SL-item remove-restaurant" onClick={()=>{this.handleClick(restaurant.id)}}>
 								Remove
 							</button>
 						</div>)

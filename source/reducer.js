@@ -28,7 +28,14 @@ const changeRestaurant = (state) => {
 		restaurant: state.Restaurants[state.Restaurant.index ++ ],
 		index: state.Restaurant.index ++
 	}
+}
 
+const removeRestaurant =(restArray, id) => {
+	return restArray.filter((restaurant) => {
+				if(restaurant.id !== id) {
+					return restaurant
+				} 
+			})
 }
 
 
@@ -54,12 +61,9 @@ export default (state = INITIALSTATE, action) => {
 			return newState
 
 		case 'REMOVE_FROM_SHORTLIST' :
-			newState.ShortList.restaurants.filter((restaurant) => {
-				if(restaurant.id !== action.id) {
-					return restaurant
-				} 
-			})  
-					return newState
+			newState.ShortList.restaurants = removeRestaurant(newState.ShortList.restaurants, action.id)
+			console.log(newState.ShortList)
+			return newState
 
 		case 'CHANGE_RESTAURANT' :
 			newState.Restaurant = {
