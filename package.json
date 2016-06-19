@@ -6,9 +6,11 @@
   "scripts": {
     "dev:watch": "watchify source/index.js -o public/bundle.js -dv -t babelify",
     "dev:server": "nodemon index.js --exec babel-node --presets es2015,stage-2",
-    "start": "clear & npm-run-all -p dev:*",
     "test:db": "babel-node test/unit/database.js --babel-node --presets es2015,stage-2",
-    "test": "clear && babel-tape-runner tests/reducer-tests.js | tap-spec "
+    "test": "clear && babel-tape-runner tests/reducer-tests.js | tap-spec ",
+    "build": "browserify source/index.js -o public/bundle.js -t babelify",
+    "start:dev": "clear & npm-run-all -p dev:*",
+    "start": "babel-node index.js"
   },
   "babel": {
     "presets": [
