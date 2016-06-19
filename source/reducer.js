@@ -73,6 +73,13 @@ export default (state = INITIALSTATE, action) => {
  
 			return newState
 
+		case 'SHOW_RESTAURANT' :
+			newState.Restaurant = {
+				index: 0,
+				restaurant: action.restaurant
+			}
+		
+			return newState
 		default :
 			return state
 

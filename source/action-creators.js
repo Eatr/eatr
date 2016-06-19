@@ -43,6 +43,13 @@ export const changeRestaurant = (index) => {
 	}
 }
 
+export const showRestaurant = (restaurant) => {
+	return {
+		type: 'SHOW_RESTAURANT',
+		restaurant: restaurant
+	}
+}
+
 
 
 
