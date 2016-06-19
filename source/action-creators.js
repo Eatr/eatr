@@ -28,18 +28,25 @@ export const addToShortlist = (restaurant) => {
 	}
 }
 
-// export const removeFromShortList = (restaurant) => {
-// 	return {
-// 		type: 'REMOVE_From_SHORTLIST',
-// 		id: restaurant
-// 	}
-// }
+export const removeFromShortList = (restaurantId) => {
+	return {
+		type: 'REMOVE_FROM_SHORTLIST',
+		id: restaurantId
+	}
+}
 
 export const changeRestaurant = (index) => {
 	console.log('action creator, ', index)
 	return {
 		type: 'CHANGE_RESTAURANT',
 		index: index
+	}
+}
+
+export const showRestaurant = (restaurant) => {
+	return {
+		type: 'SHOW_RESTAURANT',
+		restaurant: restaurant
 	}
 }
 

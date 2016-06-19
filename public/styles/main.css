@@ -1,6 +1,5 @@
 
 
-
 #main{
 display: flex;
 flex-direction: column;
@@ -36,6 +35,26 @@ align-items: center;
 
 }
 
+/* Shortlist view */
+.shortlist-restaurant {
+	display: block;
+}
+
+.SL-item {
+	vertical-align: middle;
+	height: 70px;
+	width: 100px;
+	display: inline
+	margin: 0;
+	margin-bottom: 0;
+	padding: 0;
+}
+.SL-detail {
+	vertical-align: middle;
+	height: 70px;
+	width: 300px;
+	display: inline;
+}
 
 /*restaurant component*/
 
