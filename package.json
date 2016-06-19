@@ -6,9 +6,11 @@
   "scripts": {
     "dev:watch": "watchify source/index.js -o public/bundle.js -dv -t babelify",
     "dev:server": "nodemon index.js --exec babel-node --presets es2015,stage-2",
-    "start": "clear & npm-run-all -p dev:*",
     "test:db": "babel-node test/unit/database.js --babel-node --presets es2015,stage-2",
-    "test": "clear && babel-tape-runner tests/reducer-tests.js | tap-spec "
+    "test": "clear && babel-tape-runner tests/reducer-tests.js | tap-spec ",
+    "build": "browserify source/index.js -o public/bundle.js -t babelify",
+    "start:dev": "clear & npm-run-all -p dev:*",
+    "start": "babel-node index.js --presets es2015,stage-2"
   },
   "babel": {
     "presets": [
@@ -28,13 +30,6 @@
   },
   "homepage": "https://github.com/Eatr/eatr#readme",
   "devDependencies": {
-    "babel-cli": "^6.10.1",
-    "babel-core": "^6.9.1",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-2": "^6.5.0",
-    "babel-tape-runner": "^2.0.1",
-    "babelify": "^7.3.0",
     "blue-tape": "^0.2.0",
     "browserify": "^13.0.1",
     "nodemon": "^1.9.2",
@@ -45,6 +40,13 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "babelify": "^7.3.0",
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "babel-tape-runner": "^2.0.1",
     "body-parser": "^1.15.1",
     "browser-request": "^0.3.3",
     "clone": "^1.0.2",
@@ -55,6 +57,7 @@
     "express-session": "^1.13.0",
     "geolib": "^2.0.21",
     "knex": "^0.11.5",
+    "node-uuid": "^1.4.7",
     "npm-run-all": "^2.1.2",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
