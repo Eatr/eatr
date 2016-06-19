@@ -4,40 +4,29 @@ import {connect} from 'react-redux'
 import Slider from 'rc-slider'
 import Navlink from './navlink.jsx'
 import {PriceContainer} from './price.jsx'
-
+import {DistanceContainer} from './distance.jsx'
 class Filter extends Component {
 
   componentWillMount() {
     this.userPref = Object.assign({}, this.props.preferences)
   }
 
-  handleClick(prefs) {
-    const statePref = this.props.preferences
-    if (prefs.price !== statePref.price | prefs.distance !== statePref.distance) {
-      this.userPref.updated = true
+  handleClick() {
+    const newPref = Object.assign({}, this.props.preferences)
+    if ( this.userPref.distance !== newPref.distance) {
+      newPref.updated = true
     } else {
-      this.userPref.updated= false
+      newPref.updated = false
     }
-    this.props.changePreferences(prefs)
-  }
-
-  prefHandler(pref,value) {
-    this.userPref[pref] = value
-    this.props.changePreferences(this.userPref)
-    console.log('New user preferences not in state: ', this.userPref.price)
+    this.props.changePreferences(newPref)
   }
 
   render() {
     return (
       <div>
-        <PriceContainer />
-        <p>Italian</p>
-        <p>Indian</p>
-        <h4>Distance (m):</h4>
-        <Slider id='distance' step={100} min={200} defaultValue={this.userPref.distance} max={1000} 
-          onChange={(val) =>{this.prefHandler('distance',val)}}/>
+        <DistanceContainer />
         <Navlink to='/'>
-          <button id='btn-done' onClick={ () => (this.handleClick(this.userPref)) }>
+          <button id='btn-done' onClick={ () => (this.handleClick()) }>
             Done
           </button>
         </Navlink>
