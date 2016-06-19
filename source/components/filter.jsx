@@ -3,7 +3,7 @@ import * as actionCreators from '../action-creators'
 import {connect} from 'react-redux'
 import Slider from 'rc-slider'
 import Navlink from './navlink.jsx'
-
+import {PriceContainer} from './price.jsx'
 
 class Filter extends Component {
 
@@ -23,16 +23,14 @@ class Filter extends Component {
 
   prefHandler(pref,value) {
     this.userPref[pref] = value
-    console.log('New user preferences not in state: ', this.userPref)
+    this.props.changePreferences(this.userPref)
+    console.log('New user preferences not in state: ', this.userPref.price)
   }
 
   render() {
     return (
       <div>
-        <h4>Price:</h4>
-        <Slider id='price' step={10} min={20} max={100} defaultValue={this.userPref.price}
-          onChange={(val) =>{this.prefHandler('price',val)}}/>
-        <h4>Cuisine:</h4>
+        <PriceContainer />
         <p>Italian</p>
         <p>Indian</p>
         <h4>Distance (m):</h4>
