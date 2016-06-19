@@ -7,13 +7,13 @@ export default () => {
 	return (
     <nav id='navbar'>
   		<Navlink to='/filter'>
-        <img className="nav-icon" src="http://placehold.it/50x50" alt="filter"/>
+        <img className="nav-icon" src="./images/settings-icon.png" alt="filter"/>
       </Navlink>
   		<Navlink to='/shortlist'>
-        <img className="nav-icon" src="http://placehold.it/50x50" alt="shortlist"/>
+        <img className="nav-icon" src="./images/shortlist-icon.png" alt="shortlist"/>
       </Navlink>
   		<Navlink to='/login'>
-        <img className="nav-icon" src="http://placehold.it/50x50" alt="login"/>
+        <img className="nav-icon" src="./images/login.png" alt="login"/>
       </Navlink>
   	</nav>
   )

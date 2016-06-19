@@ -3,10 +3,10 @@ import { connect } from 'react-redux'
 import {restaurantArray} from './helpers/restaurant-test-array.js'
 
 const INITIALSTATE = {
-	Restaurants: restaurantArray,
+	Restaurants: [],
 	Preferences: { 
 		price: 30, 
-		distance:500, 
+		distance: 1000, 
 		cuisine:[],
 		updated: true
 	},
@@ -15,7 +15,7 @@ const INITIALSTATE = {
 		restaurants: [],
 	},
 	Restaurant: {
-		restaurant: restaurantArray[0],
+		restaurant: {},
 		index: 0
 	},
 	User: {
@@ -46,6 +46,8 @@ export default (state = INITIALSTATE, action) => {
 	switch (action.type) {
 		case 'UPDATE_RESTAURANTS' :
 			newState.Restaurants = action.state
+			newState.Preferences.updated = false
+			newState.Restaurant.restaurant = newState.Restaurants[0]
 			return newState
 
 		case 'CHANGE_PREFERENCES' :

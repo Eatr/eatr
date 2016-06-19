@@ -87,7 +87,28 @@ doesnt exist yet
 	   1. Same swipe actions and buttons as restaurant-short view. 
 
 ###learning objectives
-	TBC
+	Hape
+	 -React/redux
+	 -Session stores
+	 -Errthang
+	 
+	Jenny
+	 -React
+	 -Swipe events
+	 -Errthang
+	
+	Lauren
+	 -Redux
+	 -React-redux
+	 -Responsive design
+	 -Errthang
+	 
+	Olly
+	 -Redux
+	 -React-redux
+	 -Deployment
+	 -Configuration
+	 -Errthang
 
 ###MVP
 	TBC

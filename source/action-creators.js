@@ -1,10 +1,10 @@
 
-// export const updateRestaurants = (newRestaurants) => {
-// 	return {
-// 		type: 'UPDATE_RESTAURANTS',
-// 		state: newRestaurants
-// 	}
-// }
+export const updateRestaurants = (newRestaurants) => {
+	return {
+		type: 'UPDATE_RESTAURANTS',
+		state: newRestaurants
+	}
+}
 
 export const changePreferences = (newPreferences) => {
 	return {
