@@ -16,11 +16,6 @@ export class App extends Component {
     super(props)
   }
 
-  componentWillMount() {
-    this.props.preferences.updated ? console.log('app sees user preferences: ', this.props.preferences) :
-    console.log('no change in preferences')
-  }
-
   render() {
  
     if (this.props.preferences.updated) {
@@ -29,13 +24,6 @@ export class App extends Component {
         .then((restaurants) => {
           this.props.updateRestaurants(restaurants)
         })
-        // .then(console.log)
-     // setTimeout(() => {
-     //    const newprefs = Object.assign({}, this.props.preferences)
-     //    newprefs.updated = false
-     //    console.log('simulating')
-     //    return this.props.changePreferences(newprefs)},
-     //  2000)
 
      return (
         <div>

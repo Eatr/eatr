@@ -6,7 +6,7 @@ const INITIALSTATE = {
 	Restaurants: [],
 	Preferences: { 
 		price: 30, 
-		distance:1000, 
+		distance: 1000, 
 		cuisine:[],
 		updated: true
 	},
