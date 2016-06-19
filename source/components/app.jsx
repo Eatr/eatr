@@ -5,6 +5,8 @@ import { createStore } from 'redux'
 
 import Navbar from './navbar.jsx'
 import Restaurant from './restaurant.jsx'
+
+
 import Splash from './splash.jsx'
 import simulate from '../../lib/simulate-get-restaurants'
 
@@ -13,13 +15,14 @@ export class App extends Component {
   constructor (props) {
     super(props)
   }
-  
+
   componentWillMount() {
     this.props.preferences.updated ? console.log('app sees user preferences: ', this.props.preferences) :
     console.log('no change in preferences')
   }
 
   render() {
+ 
     if (this.props.preferences.updated) {
      setTimeout(() => {
         const newprefs = Object.assign({}, this.props.preferences)
@@ -27,7 +30,7 @@ export class App extends Component {
         console.log('simulating')
         return this.props.changePreferences(newprefs)},
       2000)
-       
+
      return (
         <div>
           <Navbar />
@@ -38,7 +41,7 @@ export class App extends Component {
       return (
         <div>
           <Navbar />
-          <Restaurant {...this.props} /> 
+          <Restaurant {...this.props} />
         </div>
       )
     }
@@ -53,7 +56,7 @@ function mapStateToProps (state) {
 }
 
 export const AppContainer = connect(
-  mapStateToProps, 
+  mapStateToProps,
   actionCreators
   )(App)
 
