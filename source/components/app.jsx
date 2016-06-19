@@ -5,7 +5,6 @@ import { createStore } from 'redux'
 
 import Navbar from './navbar.jsx'
 import Restaurant from './restaurant.jsx'
-import YeahNahBar from './yeah-nah-bar.jsx'
 
 
 import Splash from './splash.jsx'
@@ -23,6 +22,7 @@ export class App extends Component {
   }
 
   render() {
+ 
     if (this.props.preferences.updated) {
      setTimeout(() => {
         const newprefs = Object.assign({}, this.props.preferences)
@@ -42,7 +42,6 @@ export class App extends Component {
         <div>
           <Navbar />
           <Restaurant {...this.props} />
-          <YeahNahBar {...this.props} />
         </div>
       )
     }
