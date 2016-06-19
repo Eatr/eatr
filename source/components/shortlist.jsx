@@ -39,17 +39,8 @@ export default class Shortlist extends Component {
 			}
 			</main>
 		)
-
-		
-
 	}
 }
-
-
-
-
-
-
 
 const mapStateToProps =  (state) => {
   return {
