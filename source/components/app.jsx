@@ -10,6 +10,7 @@ import getUser from '../helpers/get-user.js'
 import Splash from './splash.jsx'
 import simulate from '../../lib/simulate-get-restaurants'
 
+
 export class App extends Component {
 
   constructor (props) {
@@ -53,7 +54,8 @@ function mapStateToProps (state) {
   return {
     restaurant: state.Restaurant,
     preferences: state.Preferences,
-    user: state.User
+    user: state.User,
+    shortlist: state.ShortList
   }
 }
 
