@@ -6,12 +6,12 @@ export const updateRestaurants = (newRestaurants) => {
 	}
 }
 
-export const updateUser = (restaurants, userName) => {
+export const updateUser = (user = {shortlist: [], user: {name: null}}) => {
 	return {
 		type: 'UPDATE_USER',
 		state: {
-			restaurants: restaurants,
-			user: {name: userName}
+			restaurants: user.shortlist,
+			user: {name: user.name}
 		}
 	}
 }
@@ -31,7 +31,6 @@ export const changeViewDetail = () => {
 
 
 export const addToShortlist = (restaurant) => {
-	console.log("Restaurant added to shortlist")
 	return {
 		type: 'ADD_TO_SHORTLIST',
 		state: restaurant

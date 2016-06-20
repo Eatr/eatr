@@ -18,11 +18,7 @@ export class App extends Component {
 
   componentWillMount () {
     getUser()
-      .then((response) => {
-        const r = response[0]
-        
-        r ? this.props.updateUser(r.shortlist, r.name) : ""
-      })
+      .then(this.props.updateUser)
   }
 
   render() {
