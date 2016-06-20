@@ -6,12 +6,12 @@ export const updateRestaurants = (newRestaurants) => {
 	}
 }
 
-export const updateUser = (user = {restaurants: [], user: {name: null}}) => {
-	console.log('update user sees', user)
+export const updateUser = (user = {shortlist: [], user: {name: null}}) => {
+	console.log('update user sees', user.shortlist)
 	return {
 		type: 'UPDATE_USER',
 		state: {
-			restaurants: user.restaurants,
+			restaurants: user.shortlist,
 			user: {name: user.name}
 		}
 	}

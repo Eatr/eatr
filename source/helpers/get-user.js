@@ -7,6 +7,7 @@ export default () => {
       if (err) {
         reject(err)
       } else if (user) {
+        user.shortlist = JSON.parse(user.shortlist)
     		resolve(user)
       } else {
       	resolve()
