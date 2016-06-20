@@ -33,16 +33,16 @@ export class App extends Component {
 
      return (
         <div>
-        <p>{this.props.user.name}</p>
           <Navbar />
+          <p>{this.props.user.name}</p>
           <Splash />
         </div>
       )
     } else {
       return (
         <div>
-        <p>{this.props.user.name}</p>
           <Navbar />
+          <p>{this.props.user.name}</p>
           <Restaurant {...this.props} />
         </div>
       )
