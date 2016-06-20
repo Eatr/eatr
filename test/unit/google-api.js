@@ -51,7 +51,6 @@ test(' test get-restaurants returns restaurants', function(t) {
 		
 		t.ok(res.restaurantObjects.length > 0,  "rest array has restaurant objects")
 		t.deepEqual(Object.keys(res.restaurantObjects[0]), [ 'id', 'name', 'photo', 'open_now', 'next_page', 'phone', 'address', 'website', 'distance' ], 'keys of rest obs are correct')
-		 t.deepEqual(res.restaurantObjects[0].photo.substring(0, 4), "http", "photo key has a string value begining http")
 
 		oldRests = res.restaurantObjects
 
@@ -64,7 +63,7 @@ test(' get-restaurants wireturns new restaurants when given a new page token', f
  var newRests = res.restaurantObjects
 	t.ok(res.restaurantObjects.length > 0,  "rest array has restaurant objects")
 	t.deepEqual(Object.keys(res.restaurantObjects[0]), [ 'id', 'name', 'photo', 'open_now', 'next_page', 'phone', 'address', 'website', 'distance' ], 'keys of rest obs are correct')
-	 t.deepEqual(res.restaurantObjects[0].photo.substring(0, 4), "http", "photo key has a string value begining http")
+
 
 	 t.notDeepEqual(oldRests, newRests, "next page of restaurants dooes not equal the old page of rests")
 
