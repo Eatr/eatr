@@ -17,7 +17,14 @@ export default class Restaurant extends React.Component {
     updateServer(this.props.shortlist, restaurant)
     this.props.addToShortlist(restaurant)
   	this.props.changeRestaurant(index)
+
   }
+
+  getNewPage(){
+  	
+  }
+
+
 
 
 	render  () {
