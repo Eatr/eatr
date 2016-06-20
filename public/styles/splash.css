@@ -1,0 +1,128 @@
+html{
+  overflow-x:hidden;
+  padding-bottom:142px;
+}
+
+.pacman{
+  margin:50px 10px;
+  background: #fff;
+}
+
+.pacman-top{
+  transform-origin: bottom left; 
+  /*background:chocolate;*/
+  margin-bottom: 10px;
+  height:50px;
+  width:100px;
+  border-radius:50px 50px 10px 10px;
+  animation: spin1 0.6s infinite linear;
+}
+
+.pacman-bottom{
+  transform-origin: top left; 
+/*background-color:chocolate;*/
+  z-index:-1; 
+  height:50px;
+  width:100px;
+  border-radius:20px 20px 50px 50px;
+  animation: spin2 0.6s infinite linear;
+}
+
+.feed {
+margin-top: -145px;
+margin-left:25px;
+width: 75px;
+height: 35px;
+border-radius: 25%;
+-moz-animation: eat 2s linear 0s infinite;
+-webkit-animation: eat 2s linear 0s infinite;
+animation: eat 2s linear 0s infinite;
+}   
+
+/* Animation*/
+
+@keyframes spin1 {
+  70%{transform: rotate(10deg);}
+  50%{transform: rotate(-20deg);}
+  
+}
+@keyframes spin2 {
+  70%{transform: rotate(-10deg);}
+  50%{transform: rotate(20deg);}  
+}
+
+@-moz-keyframes spin1 {
+  0%  {transform: rotate(0deg);}
+  50%{transform: rotate(-35deg);}
+  
+}
+@-moz-keyframes spin2 {
+  0%  {transform: rotate(0deg);}
+  50%{transform: rotate(35deg);}  
+}
+
+@-webkit-keyframes spin1 {
+  0%  {transform: rotate(0deg);}
+  50%{transform: rotate(-35deg);}
+  
+}
+@-webkit-keyframes spin2 {
+  0%  {transform: rotate(0deg);}
+  50%{transform: rotate(35deg);}  
+}
+
+.food {
+   position: absolute;
+   -moz-animation: feed linear infinite;
+   -webkit-animation: feed linear infinite;
+   -o-animation: feed linear infinite;
+   animation: feed linear infinite;
+}
+
+@-moz-keyframes feed {
+   from { -moz-transform: translateX(700px); }
+   to { -moz-transform: translateX(50px); }
+}
+@-webkit-keyframes feed {
+   from { -webkit-transform: translateX(700px); }
+   to { -webkit-transform: translateX(50px); }
+} 
+@-o-keyframes feed {
+   from { -o-transform: translateX(700px); }
+   to { -o-transform: translateX(50px); }
+}
+@keyframes feed {
+   from { transform: translateX(400px); }
+   to { transform: translateX(100px); }
+}
+
+.sml {
+   z-index: -1;
+   top: 135px;
+   left: -70px;
+   -moz-animation-duration: 6s;
+   -webkit-animation-duration: 6s;
+   -o-animation-duration: 6s;
+   animation-duration: 6s;
+   animation-delay: 2s;
+}
+
+.lrg {
+  z-index: -1;
+   top: 135px;
+   left: -70px;
+   -moz-animation-duration: 6s;
+   -webkit-animation-duration: 6s;
+   -o-animation-duration: 6s;
+   animation-duration: 6s;
+   animation-delay: 4s;
+}
+.med {
+  z-index: -1;
+   top: 135px;
+   left: -70px;
+   -moz-animation-duration: 6s;
+   -webkit-animation-duration: 6s;
+   -o-animation-duration: 6s;
+   animation-duration: 6s;
+}

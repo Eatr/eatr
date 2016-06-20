@@ -21,9 +21,7 @@ export default class Restaurant extends React.Component {
 					<div id="restaurant-card" onClick={() => this.props.changeViewDetail() }>
 						<img id="restaurant-image" src={r.restaurant.photo}/>
 						<h3 className="restaurant-details-short">{r.restaurant.name}</h3>
-						<ul>
-							<li>{r.restaurant.distance}m away from your location</li>
-						</ul>
+							<h6 id="rest-dist">Distance {r.restaurant.distance}m.</h6>
 						{(r.ShowDetail)? <Details website={r.restaurant.website} phone={r.restaurant.phone} address={r.restaurant.address}/> : ""}
 					</div>
 					<YeahNahBar {...this.props}/>

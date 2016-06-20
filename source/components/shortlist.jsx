@@ -36,7 +36,7 @@ export default class Shortlist extends Component {
 									<Navlink to="/">
 										<img className="SL-item" src={restaurant.photo} onClick={()=> this.showRestaurant(restaurant)}/>
 									</Navlink>
-									<h6  className="SL-detail">{restaurant.name}</h6>
+									<h3  className="SL-detail">{restaurant.name}</h3>
 									<button className="SL-item remove-restaurant" onClick={()=>{this.handleClick(restaurant.id)}}>
 										Remove
 									</button>
