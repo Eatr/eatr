@@ -23,7 +23,7 @@ const routes = <Route>
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory}>{routes}</Router>
+    <Router >{routes}</Router>
   </Provider>,
   document.getElementById('main')
 )

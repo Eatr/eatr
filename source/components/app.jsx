@@ -6,7 +6,7 @@ import Navbar from './navbar.jsx'
 import Restaurant from './restaurant.jsx'
 import getLocation from '../helpers/get-location.js'
 import getRestaurants from '../helpers/get-restaurants.js'
-
+import getUser from '../helpers/get-user.js'
 import Splash from './splash.jsx'
 import simulate from '../../lib/simulate-get-restaurants'
 
@@ -14,6 +14,11 @@ export class App extends Component {
 
   constructor (props) {
     super(props)
+  }
+
+  componentWillMount () {
+    getUser()
+      .then(this.props.updateUser)
   }
 
   render() {
@@ -27,6 +32,7 @@ export class App extends Component {
 
      return (
         <div>
+        <p>{this.props.user.name}</p>
           <Navbar />
           <Splash />
         </div>
@@ -34,6 +40,7 @@ export class App extends Component {
     } else {
       return (
         <div>
+        <p>{this.props.user.name}</p>
           <Navbar />
           <Restaurant {...this.props} />
         </div>
@@ -45,7 +52,8 @@ export class App extends Component {
 function mapStateToProps (state) {
   return {
     restaurant: state.Restaurant,
-    preferences: state.Preferences
+    preferences: state.Preferences,
+    user: state.User
   }
 }
 

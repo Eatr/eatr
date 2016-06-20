@@ -18,9 +18,7 @@ const INITIALSTATE = {
 		index: 0,
 		ShowDetail: false
 	},
-	User: {
-
-	}
+	User: {name: ""}
 }
 
 const changeRestaurant = (state) => {
@@ -59,13 +57,18 @@ export default (state = INITIALSTATE, action) => {
 			return newState
 
 		case 'ADD_TO_SHORTLIST' :
+			console.log(newState.ShortList)
 			newState.ShortList.restaurants.push(action.state)
 			return newState
 
 		case 'REMOVE_FROM_SHORTLIST' :
 			newState.ShortList.restaurants = removeRestaurant(newState.ShortList.restaurants, action.id)
-			console.log(newState.ShortList)
 			return newState
+
+		case 'UPDATE_USER' :
+			newState.ShortList.restaurants = action.state.restaurants
+			newState.User = action.state.user
+		return newState
 
 		case 'CHANGE_RESTAURANT' :
 			newState.Restaurant = {

@@ -26,6 +26,7 @@ export default (knex) => {
 	}
 
 	const editUser = (user, details) => {
+		details.shortlist = JSON.stringify(details.shortlist)
 		return knex('users')
 			.where('id', user.id)
 			.update(details)
@@ -40,20 +41,26 @@ export default (knex) => {
 			.catch(handleError)
 	}
 
-	const processUser = (cb, user) => {
-		return isUser(user.passportId)
-				.then((userDetails) => {
-					if (userDetails.exist) {
-						console.log('User exists: ', userDetails)
-						return cb(null, findUser(userDetails.id))
-					} else {
-						addUser (user)
-							.then((newId) => {
-								console.log('User added: ', user)
-								return cb(null, Object.assign({id: newId[0]}, user))
-							})
-					}
-				})
+	const processUser = (user) => {
+		return new Promise ((resolve, reject) => {
+			return isUser(user.passportId)
+					.then((userDetails) => {
+						if (userDetails.exist) {
+							findUser(userDetails.id)
+								.then(user => {
+									user[0].shortlist = JSON.parse(user[0].shortlist)
+									resolve(user)
+								})
+						} else {
+							addUser (user)
+								.then((newId) => {
+									console.log("monday", Object.assign({id: newId[0]}, user))
+									resolve( [Object.assign({id: newId[0]}, user) ])
+								})
+						}
+					})
+				
+			})
 	}
 
 
