@@ -3,7 +3,10 @@ import YeahNahBar from './yeah-nah-bar.jsx'
 import Details from './restaurant-details.jsx'
 var Swipeable = require('react-swipeable')
 import updateServer from '../helpers/update-server.js'
+import getMoreRestaurants from '../helpers/get-more-restaurants.js'
+
 export default class Restaurant extends React.Component {
+
 
 	constructor(props) {
 		super(props)
@@ -11,6 +14,8 @@ export default class Restaurant extends React.Component {
 
   swipeLeft (index) {
   	this.props.changeRestaurant(index)
+
+  	this.getNewPage(this.props.restaurant)
   }
 
   swipeRight(index, restaurant) {
@@ -18,9 +23,17 @@ export default class Restaurant extends React.Component {
     this.props.addToShortlist(restaurant)
   	this.props.changeRestaurant(index)
 
+  	this.getNewPage(this.props.restaurant)
+
   }
 
-  getNewPage(){
+  getNewPage(restaurant){
+  	
+  	if(restaurant.index === 19) {
+  		console.log("-------- Index is at 19 ---------")
+  		getMoreRestaurants(this.props['my_location'], restaurant.restaurant['next_page'])
+
+  	}
   	
   }
 
@@ -28,6 +41,7 @@ export default class Restaurant extends React.Component {
 
 
 	render  () {
+
 		const {restaurant, index, ShowDetail } = this.props.restaurant
 		const {changeViewDetail} = this.props
 

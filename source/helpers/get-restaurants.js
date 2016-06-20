@@ -12,16 +12,3 @@ export default (location) => {
 	})
 }
 
-export const getMoreRestaurants (nextPageToken) {
-		return new Promise ((resolve, reject) => {
-		request(`/nextpage/${nextPageToken}`, (err, response) => {
-			if (err) {
-				console.log(err)
-			} else {
-				resolve(JSON.parse(response.responseText))
-			}
-		})
-	})
-
-
-}
