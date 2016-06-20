@@ -14,7 +14,9 @@ export default class Restaurant extends React.Component {
   }
 
   swipeRight(index, restaurant) {
-    updateServer(this.props.shortlist, restaurant)
+    this.props.user.name ? 
+    	updateServer(this.props.shortlist, restaurant) : 
+    	null
     this.props.addToShortlist(restaurant)
   	this.props.changeRestaurant(index)
   }

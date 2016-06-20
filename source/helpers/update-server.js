@@ -18,7 +18,7 @@ export default (shortlist, restaurant, type = 'add') => {
 	return new Promise ((resolve, reject) => {
 		request(options, (err, response) => {
 			if (err) {
-				console.log(err)
+				reject(err)
 			} else {
 				resolve(JSON.parse(response.responseText))
 			}

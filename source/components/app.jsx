@@ -33,7 +33,6 @@ export class App extends Component {
 
      return (
         <div>
-        <p>{this.props.user.name}</p>
           <Navbar />
           <Splash />
         </div>
@@ -41,7 +40,6 @@ export class App extends Component {
     } else {
       return (
         <div>
-        <p>{this.props.user.name}</p>
           <Navbar />
           <Restaurant {...this.props} />
         </div>
