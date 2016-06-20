@@ -19,7 +19,9 @@ export class App extends Component {
   componentWillMount () {
     getUser()
       .then((response) => {
-        console.log(response)
+        const r = response[0]
+        
+        r ? this.props.updateUser(r.shortlist, r.name) : ""
       })
   }
 
@@ -34,6 +36,7 @@ export class App extends Component {
 
      return (
         <div>
+        <p>{this.props.user.name}</p>
           <Navbar />
           <Splash />
         </div>
@@ -41,6 +44,7 @@ export class App extends Component {
     } else {
       return (
         <div>
+        <p>{this.props.user.name}</p>
           <Navbar />
           <Restaurant {...this.props} />
         </div>
@@ -52,7 +56,8 @@ export class App extends Component {
 function mapStateToProps (state) {
   return {
     restaurant: state.Restaurant,
-    preferences: state.Preferences
+    preferences: state.Preferences,
+    user: state.User
   }
 }
 
