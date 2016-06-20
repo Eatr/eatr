@@ -11,7 +11,14 @@ class Login extends Component {
     return (
       <div>
         <Navbar/>
-        <div className="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+        <div id='login-box'>
+          <a id='facebook-link' class='login-button' href="/auth/facebook" alt='Login with Facebook'>
+            <button>Login with Facebook</button>
+          </a>
+          <a  id='Twitter-link' class='login-button' href="/auth/twitter" alt='Login with Twitter'>
+            <button>Login with Twitter</button>
+          </a>
+        </div>
     </div>
 
     )
