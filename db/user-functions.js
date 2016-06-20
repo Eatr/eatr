@@ -26,6 +26,7 @@ export default (knex) => {
 	}
 
 	const editUser = (user, details) => {
+		details.shortlist = JSON.stringify(details.shortlist)
 		return knex('users')
 			.where('id', user.id)
 			.update(details)
@@ -45,12 +46,10 @@ export default (knex) => {
 			return isUser(user.passportId)
 					.then((userDetails) => {
 						if (userDetails.exist) {
-							return findUser(userDetails.id)
-								.then( (user) => {
-										return findUser(userDetails.id)
-											.then((user) => {
-												resolve(user)
-											})
+							findUser(userDetails.id)
+								.then(user => {
+									user[0].shortlist = JSON.parse(user[0].shortlist)
+									resolve(user)
 								})
 						} else {
 							addUser (user)
