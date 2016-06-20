@@ -48,9 +48,9 @@ const theNextDetail= nock ('https://maps.googleapis.com')
 				.reply(200, getDetailResponse)
 
 
-const theNextPage= nock ('https://maps.googleapis.com')
-				.get('/maps/api/place/nearbysearch/json?key=' + key + '&location='+ locationLat +'%2C' + locationLon + '&pagetoken=def' + '&radius=' + locationRadius + '&type=restaurant')
-				.reply(200, getNextPageResponse)
+// const theNextPage= nock ('https://maps.googleapis.com')
+// 				.get('/maps/api/place/nearbysearch/json?key=' + key + '&location='+ locationLat +'%2C' + locationLon + '&pagetoken=def' + '&radius=' + locationRadius + '&type=restaurant')
+// 				.reply(200, getNextPageResponse)
 
 const theNewNextPage= nock ('https://maps.googleapis.com')
 				.get('/maps/api/place/nearbysearch/json?key=' + key + '&location=-41.29694%2C174.773897&pagetoken=def&radius&type=restaurant')
