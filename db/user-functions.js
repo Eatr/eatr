@@ -53,7 +53,6 @@ export default (knex) => {
 						} else {
 							addUser (user)
 								.then((newId) => {
-									console.log("monday", Object.assign({id: newId[0]}, user))
 									resolve( [Object.assign({id: newId[0]}, user) ])
 								})
 						}

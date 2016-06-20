@@ -7,8 +7,12 @@ const options = {
 	json: true
 }
 
-export default (shortlist, restaurant) => {
-	var newShortlist = shortlist.restaurants.concat(restaurant)
+export default (shortlist, restaurant, type = 'add') => {
+
+	var newShortlist = type === 'add' ?
+		shortlist.restaurants.concat(restaurant) :
+		shortlist.restaurants.filter( r => r.id !== restaurant.id)
+		console.log(newShortlist)
 	options.headers = {data: JSON.stringify(newShortlist)}
 
 	return new Promise ((resolve, reject) => {
