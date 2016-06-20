@@ -1,0 +1,40 @@
+{
+   "html_attributions" : [],
+   "next_page_token": "def",
+   "results" : [
+      {
+         "geometry" : {
+            "location" : {
+               "lat" : -41.2954143,
+               "lng" : 174.7747778
+            }
+         },
+         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/lodging-71.png",
+         "id" : "3f6aeb61048bbdd05af23f1565072adbb98b06cb",
+         "name" : "CQ Hotels Wellington",
+         "opening_hours" : {
+            "open_now" : false,
+            "weekday_text" : []
+         },
+         "photos" : [
+            {
+               "height" : 1037,
+               "html_attributions" : [
+                  "\u003ca href=\"https://maps.google.com/maps/contrib/111297967665143512090/photos\"\u003eCQ Hotels Wellington\u003c/a\u003e"
+               ],
+               "photo_reference" : "abc",
+               "width" : 1555
+            }
+         ],
+         "place_id" : "ChIJEwPxXtivOG0RHlD5Ey7Ay0o",
+         "rating" : 3.5,
+         "reference" : "ghi",
+         "scope" : "GOOGLE",
+         "types" : [ "restaurant", "food", "lodging", "point_of_interest", "establishment" ],
+         "vicinity" : "223 Cuba Street, Te Aro, Wellington"
+      }
+   ],
+   "status" : "OK"
+
+
+}
