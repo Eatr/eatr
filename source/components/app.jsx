@@ -34,7 +34,6 @@ export class App extends Component {
      return (
         <div>
           <Navbar />
-          <p>{this.props.user.name}</p>
           <Splash />
         </div>
       )
@@ -42,7 +41,6 @@ export class App extends Component {
       return (
         <div>
           <Navbar />
-          <p>{this.props.user.name}</p>
           <Restaurant {...this.props} />
         </div>
       )
