@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react'
 
 class Login extends Component {
@@ -14,3 +15,13 @@ class Login extends Component {
 }
 
 export default Login
+=======
+import React from 'react'
+import Navbar from './navbar.jsx'
+
+export default () => <div>
+		<Navbar/>
+			<p>Hello this is modal</p>
+	</div>
+	
+>>>>>>> fad803ed841df41714ee622abe9b3fec6b127e21

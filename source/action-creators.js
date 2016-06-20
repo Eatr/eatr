@@ -1,10 +1,10 @@
 
-// export const updateRestaurants = (newRestaurants) => {
-// 	return {
-// 		type: 'UPDATE_RESTAURANTS',
-// 		state: newRestaurants
-// 	}
-// }
+export const updateRestaurants = (newRestaurants) => {
+	return {
+		type: 'UPDATE_RESTAURANTS',
+		state: newRestaurants
+	}
+}
 
 export const changePreferences = (newPreferences) => {
 	return {
@@ -13,12 +13,11 @@ export const changePreferences = (newPreferences) => {
 	}
 }
 
-// export const changeViewDetail = (bool) => {
-// 	return {
-// 		type: 'CHANGE_VIEW_DETAIL',
-// 		state: bool
-// 	}
-// }
+export const changeViewDetail = () => {
+	return {
+		type: 'CHANGE_VIEW_DETAIL'
+	}
+}
 
 
 export const addToShortlist = (restaurant) => {
