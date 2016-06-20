@@ -23,38 +23,47 @@ export default class Shortlist extends Component {
 
 	render () {
 		const shortlist = this.props.shortlist.restaurants
-
-		return (
-			<div>
-				<Navbar/>
-				<main id='shortlist'>
-				{
-					!(shortlist) ? null : shortlist.map((restaurant) => {
+		if (shortlist.length===0) {
+			console.log('nothing in shortlist')
+			return (
+				<div>
+					<Navbar/>
+					<main id='shortlist'>
+						<p>Nothing in your shorty yet</p>
+					</main>
+				</div>
+				)
+		} else {
+			return (
+				<div>
+					<Navbar/>
+					<main id='shortlist'>
+					{shortlist.map((restaurant) => {
 						return (
 							<Swipeable  
-								delta={50} 
-								onSwipedLeft={	() => this.handleClick(restaurant) } >
-								<div	className="shortlist-restaurant">
-									<Navlink to="/">
-										<img 
-											className="SL-item" 
-											src={restaurant.photo} 
-											onClick={()=> this.showRestaurant(restaurant)}/>
-									</Navlink>
-									<h6  className="SL-detail">{restaurant.name}</h6>
-									<button 
-										className="SL-item remove-restaurant" 
-										onClick={()=>{this.handleClick(restaurant)}}>
-											Remove
-									</button>
-								</div>
-						</Swipeable>)
-
-					})
-				}
-				</main>
-			</div>
-		)
+							delta={50} 
+							onSwipedLeft={	() => this.handleClick(restaurant) } >
+							<div	className="shortlist-restaurant">
+								<Navlink to="/">
+									<img 
+										className="SL-item" 
+										src={restaurant.photo} 
+										onClick={()=> this.showRestaurant(restaurant)}/>
+								</Navlink>
+								<h6  className="SL-detail">{restaurant.name}</h6>
+								<button 
+									className="SL-item remove-restaurant" 
+									onClick={()=>{this.handleClick(restaurant)}}>
+										Remove
+								</button>
+							</div>
+						</Swipeable>
+						)
+					})}
+						
+					</main>
+				</div>)
+		}
 	}
 }
 
