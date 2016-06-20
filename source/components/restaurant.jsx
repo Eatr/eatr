@@ -21,23 +21,33 @@ export default class Restaurant extends React.Component {
 
 
 	render  () {
-		const r = this.props.restaurant
+		const {restaurant, index, ShowDetail } = this.props.restaurant
+		const {changeViewDetail} = this.props
 
 		return (
 		  <Swipeable 
 			  delta={50} 
-			  onSwipedLeft={() => this.swipeLeft(r.index+1)}
-		  	onSwipedRight={() => this.swipeRight(r.index+1,r.restaurant)}>
+			  onSwipedLeft={() => this.swipeLeft(index+1)}
+		  	onSwipedRight={() => this.swipeRight(index+1,restaurant)}>
 				<div id="restaurant-container" >
-					<div id="restaurant-card" onClick={() => this.props.changeViewDetail() }>
-						<img id="restaurant-image" src={r.restaurant.photo}/>
-						<h3 className="restaurant-details-short">{r.restaurant.name}</h3>
+					<div id="restaurant-card" onClick={() => changeViewDetail() }>
+						<img id="restaurant-image" src={restaurant.photo}/>
+						<h3 className="restaurant-details-short">{restaurant.name}</h3>
 						<ul>
-							<li>{r.restaurant.distance}m away from your location</li>
+							<li>{restaurant.distance}m away from your location</li>
 						</ul>
-						{(r.ShowDetail)? <Details website={r.restaurant.website} phone={r.restaurant.phone} address={r.restaurant.address}/> : ""}
+							{(ShowDetail)? 
+								<Details 
+									website={restaurant.website} 
+									phone={restaurant.phone} 
+									address={restaurant.address}/> : 
+								null
+							}
 					</div>
-					<YeahNahBar reject={this.swipeLeft} add={this.swipeRight} {...this.props}/>
+					<YeahNahBar 
+						reject={index => this.swipeLeft(index)} 
+						add={(index, restaurant) => this.swipeRight(index, restaurant)} 
+						{...this.props}/>
 				</div>
 			</Swipeable>
 		)

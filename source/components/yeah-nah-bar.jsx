@@ -6,12 +6,19 @@ export default class YeahNahBar extends React.Component {
   }
 
   render () {
-    const r = this.props.restaurant
+    const {restaurant, reject, add} = this.props
     return (
       <div id="yeahnah-container">
-
-      <button onClick={() => this.props.reject} id="nope"><img className="yeahnah-button" src="./images/x.png" alt="nope"/></button>
-      <button onClick={() => this.props.add} id="yeah"><img className="yeahnah-button" src="./images/tick.png" alt="yeah"/></button>
+      <button 
+        onClick={() => reject(restaurant.index+1)} 
+        id="nope">
+          <img className="yeahnah-button" src="./images/x.png" alt="nope"/>
+      </button>
+      <button 
+        onClick={() => add(restaurant.index+1,restaurant.restaurant)} 
+        id="yeah">
+          <img className="yeahnah-button" src="./images/tick.png" alt="yeah"/>
+      </button>
       </div>
     )
 
