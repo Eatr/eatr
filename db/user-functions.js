@@ -45,7 +45,6 @@ export default (knex) => {
 			return isUser(user.passportId)
 					.then((userDetails) => {
 						if (userDetails.exist) {
-							console.log('hella')
 							return findUser(userDetails.id)
 								.then( (user) => {
 										return findUser(userDetails.id)
@@ -54,7 +53,6 @@ export default (knex) => {
 											})
 								})
 						} else {
-							console.log('hello')
 							addUser (user)
 								.then((newId) => {
 									resolve( Object.assign({id: newId[0]}, user) )
