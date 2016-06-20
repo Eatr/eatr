@@ -26,7 +26,6 @@ export default (knex) => {
 	}
 
 	const editUser = (user, details) => {
-		details.shortlist = JSON.stringify(details.shortlist)
 		return knex('users')
 			.where('id', user.id)
 			.update(details)
