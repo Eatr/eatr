@@ -32,46 +32,7 @@
          "scope" : "GOOGLE",
          "types" : [ "restaurant", "food", "lodging", "point_of_interest", "establishment" ],
          "vicinity" : "223 Cuba Street, Te Aro, Wellington"
-      },
-      {
-         "geometry" : {
-            "location" : {
-               "lat" : -41.2959664,
-               "lng" : 174.774136
-            }
-         },
-         "icon" : "https://maps.gstatic.com/mapfiles/place_api/icons/restaurant-71.png",
-         "id" : "50d38a35cc227f54733d2da0417d84752ba65eaf",
-         "name" : "Fidel's Cafe",
-         "opening_hours" : {
-            "open_now" : true,
-            "weekday_text" : []
-         },
-         "photos" : [
-            {
-               "height" : 355,
-               "html_attributions" : [
-                  "\u003ca href=\"https://maps.google.com/maps/contrib/111785445665147938771/photos\"\u003eFidel&#39;s Cafe\u003c/a\u003e"
-               ],
-               "photo_reference" : "CoQBcwAAALIN3vToU8moYE8azNxpEhFZi2f32wqPEhl2gp2CYGSmYoZPX0yGwTAu8B8kq_H4cbJYUfuN1fwkLfB759DcronAznfgPD1_1h-_Korcu73czFeoGCHX9mEbOLZU2sXDf3UKBHIov_I1PEjJcnx9Ea_IS372TFk9UH6SXdnCj0-0EhANFEllF72KdhRTQHxavzOEGhTSedSLoOdRztVofp-6V58DrG00lw",
-               "width" : 354
-            }
-         ],
-         "place_id" : "ChIJK8JchdivOG0RtHmFho5n9wc",
-         "rating" : 4.4,
-         "reference" : "CmRfAAAANHtMv2fuiFJlAI766cPrWCbvgnBg_1yFL3R3pqVaL5fgpC2-J9SzSQuz-CGThF9kaZ9bcR8ztg7F3swv7Yzn-WrZ6nzRtomkTyge530F8qW0aig4D34xPcCrZWnthD9LEhAuDN7LD_PR-Q-hkjeuMDR_GhTwdHxVYWadk82zruTrAki3L9jFGg",
-         "scope" : "GOOGLE",
-         "types" : [
-            "restaurant",
-            "cafe",
-            "bar",
-            "food",
-            "point_of_interest",
-            "establishment"
-         ],
-         "vicinity" : "234 Cuba Street"
       }
-      
    ],
    "status" : "OK"
 
