@@ -1,5 +1,6 @@
 {
    "html_attributions" : [],
+   "next_page_token": "def",
    "results" : [
       {
          "geometry" : {
@@ -21,13 +22,13 @@
                "html_attributions" : [
                   "\u003ca href=\"https://maps.google.com/maps/contrib/111297967665143512090/photos\"\u003eCQ Hotels Wellington\u003c/a\u003e"
                ],
-               "photo_reference" : "CoQBdwAAAE4kaHa8aWUn2_jRFGtS1SXHOsztJSd9Ka1OUhV21sSxmzqTW86ekaDLW1k8xz5TBXkatTHKkhihE--F7kQMBAT2yDoiH66FpBiyhP_S5S4TwPD7eonBwqDsIkVvIWOCSQkuIz6eGzamsDtS9b9urnDugjZGejI1m3Cq9srlI0hcEhBoDYThcP9OkOFVEAvfq46zGhREzjofNXPxp4NoHTWm7trtzBM2zQ",
+               "photo_reference" : "abc",
                "width" : 1555
             }
          ],
          "place_id" : "ChIJEwPxXtivOG0RHlD5Ey7Ay0o",
          "rating" : 3.5,
-         "reference" : "CnRnAAAAGKD9XcGn33orJXxOUBGiy7r1RGB94HLUoPaHSHiBgK-OjhZGY8MaH1IzZL2VDZI_FrWovZwnkG7r7NqlAJV2SSnYkWhcvI_K7F7AgCc3GXeSBKWwwfj461Oeg1nYtG79FgWu6gNui5UhVo_368_hoRIQiq08PPgV5qXHwzvxAIsrmBoUU805dqoOUjXI5_Nd54q8JwcVU70",
+         "reference" : "ghi",
          "scope" : "GOOGLE",
          "types" : [ "restaurant", "food", "lodging", "point_of_interest", "establishment" ],
          "vicinity" : "223 Cuba Street, Te Aro, Wellington"
