@@ -3,7 +3,7 @@ import * as actionCreators from '../action-creators'
 import {connect} from 'react-redux'
 import Navlink from './navlink.jsx'
 import Navbar from './navbar.jsx'
-
+import updateServer from '../helpers/update-server.js'
 var Swipeable = require('react-swipeable')
 
 export default class Shortlist extends Component {
@@ -11,9 +11,11 @@ export default class Shortlist extends Component {
 		super(props)
 	}
 
-	handleClick(restaurantId) {
-		console.log(this.props)
-		this.props.removeFromShortList(restaurantId)
+	handleClick(restaurant) {
+		this.props.user.name ? 
+			updateServer(this.props.shortlist, restaurant, 'remove') :
+    	null
+		this.props.removeFromShortList(restaurant.id)
 	}
 
 	showRestaurant(restaurant) {
@@ -23,37 +25,53 @@ export default class Shortlist extends Component {
 
 	render () {
 		const shortlist = this.props.shortlist.restaurants
-
-		return (
-			<div>
-				<Navbar/>
-				<main id='shortlist'>
-				{
-					!(shortlist) ? "" : shortlist.map((restaurant) => {
+		if (shortlist.length===0) {
+			console.log('nothing in shortlist')
+			return (
+				<div>
+					<Navbar/>
+					<main id='shortlist'>
+						<p>Nothing in your shorty yet</p>
+					</main>
+				</div>
+				)
+		} else {
+			return (
+				<div>
+					<Navbar/>
+					<main id='shortlist'>
+					{shortlist.map((restaurant) => {
 						return (
-							<Swipeable  delta={50} onSwipedLeft={	() => this.handleClick(restaurant.id) } >
-								<div	className="shortlist-restaurant">
-									<Navlink to="/">
-										<img className="SL-item" src={restaurant.photo} onClick={()=> this.showRestaurant(restaurant)}/>
-									</Navlink>
-									<h3  className="SL-detail">{restaurant.name}</h3>
-									<button className="SL-item remove-restaurant" onClick={()=>{this.handleClick(restaurant.id)}}>
+							<Swipeable
+							delta={50}
+							onSwipedLeft={() => this.handleClick(restaurant)}>
+							<div	className="shortlist-restaurant">
+								<Navlink to="/">
+									<img 
+										className="SL-item" 
+										src={restaurant.photo} 
+										onClick={()=> this.showRestaurant(restaurant)}/>
+								</Navlink>
+								<h3  className="SL-detail">{restaurant.name}</h3>
+								<button 
+									className="SL-item remove-restaurant" 
+									onClick={()=>{this.handleClick(restaurant)}}>
 										Remove
-									</button>
-								</div>
-						</Swipeable>)
-
-					})
-				}
-				</main>
-			</div>
-		)
+								</button>
+							</div>
+						</Swipeable>
+						)
+					})}	
+					</main>
+				</div>)
+		}
 	}
 }
 
 const mapStateToProps =  (state) => {
   return {
-    shortlist: state.ShortList
+    shortlist: state.ShortList,
+    user: state.User
   }
 }
 

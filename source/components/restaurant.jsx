@@ -2,29 +2,52 @@ import React from 'react'
 import YeahNahBar from './yeah-nah-bar.jsx'
 import Details from './restaurant-details.jsx'
 var Swipeable = require('react-swipeable')
-
+import updateServer from '../helpers/update-server.js'
 export default class Restaurant extends React.Component {
 
 	constructor(props) {
 		super(props)
 	}
 
+  swipeLeft (index) {
+  	this.props.changeRestaurant(index)
+  }
+
+  swipeRight(index, restaurant) {
+    this.props.user.name ? 
+    	updateServer(this.props.shortlist, restaurant) : 
+    	null
+    this.props.addToShortlist(restaurant)
+  	this.props.changeRestaurant(index)
+  }
+
 
 	render  () {
-		const r = this.props.restaurant
+		const {restaurant, index, ShowDetail } = this.props.restaurant
+		const {changeViewDetail} = this.props
 
 		return (
-
-		  <Swipeable delta={50} onSwipedLeft={	() => this.props.changeRestaurant(r.index + 1)  }
-		  	onSwipedRight={() => [this.props.addToShortlist(r.restaurant), this.props.changeRestaurant(r.index + 1)].map((action) => action ) }>
+		  <Swipeable 
+			  delta={50} 
+			  onSwipedLeft={() => this.swipeLeft(index+1)}
+		  	onSwipedRight={() => this.swipeRight(index+1,restaurant)}>
 				<div id="restaurant-container" >
-					<div id="restaurant-card" onClick={() => this.props.changeViewDetail() }>
-						<img id="restaurant-image" src={r.restaurant.photo}/>
-						<h3 className="restaurant-details-short">{r.restaurant.name}</h3>
-							<h6 id="rest-dist">Distance {r.restaurant.distance}m.</h6>
-						{(r.ShowDetail)? <Details website={r.restaurant.website} phone={r.restaurant.phone} address={r.restaurant.address}/> : ""}
+					<div id="restaurant-card" onClick={() => changeViewDetail() }>
+						<img id="restaurant-image" src={restaurant.photo}/>
+						<h3 className="restaurant-details-short">{restaurant.name}</h3>
+							<h6 id="rest-dist">Distance {restaurant.distance}m.</h6>
+							{(ShowDetail)? 
+								<Details 
+									website={restaurant.website} 
+									phone={restaurant.phone} 
+									address={restaurant.address}/> : 
+								null
+							}
 					</div>
-					<YeahNahBar {...this.props}/>
+					<YeahNahBar 
+						reject={index => this.swipeLeft(index)} 
+						add={(index, restaurant) => this.swipeRight(index, restaurant)} 
+						{...this.props}/>
 				</div>
 			</Swipeable>
 		)

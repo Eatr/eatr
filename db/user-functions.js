@@ -26,7 +26,6 @@ export default (knex) => {
 	}
 
 	const editUser = (user, details) => {
-		details.shortlist = JSON.stringify(details.shortlist)
 		return knex('users')
 			.where('id', user.id)
 			.update(details)
@@ -54,7 +53,6 @@ export default (knex) => {
 						} else {
 							addUser (user)
 								.then((newId) => {
-									console.log("monday", Object.assign({id: newId[0]}, user))
 									resolve( [Object.assign({id: newId[0]}, user) ])
 								})
 						}

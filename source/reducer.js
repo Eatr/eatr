@@ -18,7 +18,7 @@ const INITIALSTATE = {
 		index: 0,
 		ShowDetail: false
 	},
-	User: {name: ""}
+	User: {name: null}
 }
 
 const changeRestaurant = (state) => {
@@ -57,7 +57,6 @@ export default (state = INITIALSTATE, action) => {
 			return newState
 
 		case 'ADD_TO_SHORTLIST' :
-			console.log(newState.ShortList)
 			newState.ShortList.restaurants.push(action.state)
 			return newState
 
