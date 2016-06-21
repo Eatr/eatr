@@ -38,5 +38,7 @@ jspm_packages
 
 .env
 
+public/bundle.js
+
 
 *.sqlite
