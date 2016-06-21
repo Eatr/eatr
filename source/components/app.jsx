@@ -21,7 +21,6 @@ export class App extends Component {
   render() {
   
     if (this.props.preferences.updated) {
-    console.log('once in client')
       getLocation(this.props.preferences.distance)
         .then(getRestaurants)
         .then((restaurants) => {
