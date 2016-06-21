@@ -9,8 +9,9 @@ export class Login extends Component {
   }
 
   render() {
-    const name = this.props.user.name
-    if (name === undefined || name=== null) {
+    const {name, picture} = this.props.user
+    console.log(this.props.user)
+    if (!name) {
       return (
         <div>
           <Navbar/>
@@ -34,6 +35,9 @@ export class Login extends Component {
           <Navbar/>
           <div id='login-box'>
             <section id='user-details'>
+              <div id='user-image'>
+                <img src={picture} alt='profile pic'/>
+              </div>
               <p>Hey {name}, we are you eating tonight?</p>
             </section>
           </div>
