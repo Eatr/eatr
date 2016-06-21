@@ -26,7 +26,7 @@ class Restaurant extends React.Component {
 				.then(updateRestaurants)
 					.then( () => {
 						this.nextPage = false
-						changeRestaurant(0)  // to trigger prop change
+						changeRestaurant(0)  // to trigger prop change fucking P.O.S.
 						})
 	  } else {
 	  	changeRestaurant(index)
@@ -47,13 +47,15 @@ class Restaurant extends React.Component {
 		  addToShortlist} = this.props
 	    
 	  if(this.nextPage){
-			  // this.nextPage = false
 		    user.name ? updateServer(shortlist, restaurant) : null
 		    addToShortlist(restaurant)
 
 		  	getMoreRestaurants(location, restaurant['next_page'])
 		  		.then(updateRestaurants)
-		  		.then(() => this.nextPage = false)
+		  		.then( () => {
+						this.nextPage = false
+						changeRestaurant(0)  // to trigger prop change fucking P.O.S.
+						})
 	  	} else {
 	  		user.name ? updateServer(shortlist, restaurant) : null
 		    changeRestaurant(index)
@@ -71,7 +73,6 @@ class Restaurant extends React.Component {
  	render  () {
 		const {restaurant, index, ShowDetail } = this.props.restaurant
 		const {changeViewDetail} = this.props
-		console.log(this.nextPage, index)
 			if (this.nextPage) {
 				return (<Splash />)
 			}else {

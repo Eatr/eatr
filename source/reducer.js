@@ -46,12 +46,10 @@ export default (state = INITIALSTATE, action) => {
 
 	switch (action.type) {
 		case 'UPDATE_RESTAURANTS' :
-		console.log(action.state)
 			newState.Restaurants = action.state.restaurantObjects
 			newState.Preferences.updated = false
 			newState.Restaurant.restaurant = newState.Restaurants[0]
 			newState.Restaurant.index = 0
-			console.log(newState.Restaurants)
 			return newState
 
 		case 'UPDATE_LOCATION' :
