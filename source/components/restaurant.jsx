@@ -21,6 +21,10 @@ export default class Restaurant extends React.Component {
   	this.props.changeRestaurant(index)
   }
 
+   handleClick() {
+
+  }
+
 
 	render  () {
 		const {restaurant, index, ShowDetail } = this.props.restaurant
@@ -31,7 +35,7 @@ export default class Restaurant extends React.Component {
 			  delta={50} 
 			  onSwipedLeft={() => this.swipeLeft(index+1)}
 		  	onSwipedRight={() => this.swipeRight(index+1,restaurant)}>
-				<div id="restaurant-container" >
+				<div id="restaurant-container">
 					<div id="restaurant-card" onClick={() => changeViewDetail() }>
 						<img id="restaurant-image" src={restaurant.photo}/>
 						<h3 className="restaurant-details-short">{restaurant.name}</h3>
@@ -50,6 +54,7 @@ export default class Restaurant extends React.Component {
 						{...this.props}/>
 				</div>
 			</Swipeable>
+
 		)
 
 	}

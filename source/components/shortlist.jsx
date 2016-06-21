@@ -46,6 +46,7 @@ export default class Shortlist extends Component {
 							delta={50}
 							onSwipedLeft={() => this.handleClick(restaurant)}>
 							<div	className="shortlist-restaurant">
+								<div id="rest-short-card">
 								<Navlink to="/">
 									<img 
 										className="SL-item" 
@@ -58,6 +59,7 @@ export default class Shortlist extends Component {
 									onClick={()=>{this.handleClick(restaurant)}}>
 										Remove
 								</button>
+								</div>
 							</div>
 						</Swipeable>
 						)
