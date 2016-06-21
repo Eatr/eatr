@@ -3,26 +3,53 @@ import YeahNahBar from './yeah-nah-bar.jsx'
 import Details from './restaurant-details.jsx'
 var Swipeable = require('react-swipeable')
 import updateServer from '../helpers/update-server.js'
+import getMoreRestaurants from '../helpers/get-more-restaurants.js'
+
 export default class Restaurant extends React.Component {
 
 	constructor(props) {
 		super(props)
+		this.nextPage = false
 	}
 
   swipeLeft (index) {
-  	this.props.changeRestaurant(index)
-  }
+  if(this.nextPage){
+  	
+  	getMoreRestaurants(this.props.restaurant.restaurant['my_location'], this.props.restaurant.restaurant['next_page'])
+			.then((newRestsArray) => {
+			  this.nextPage = false
+				this.props.updateRestaurants(newRestsArray)
+				this.props.changeRestaurant(0)
+			})
+  } else {
+  		this.props.changeRestaurant(index)
+  	}
+ 	}
 
   swipeRight(index, restaurant) {
-    this.props.user.name ? 
-    	updateServer(this.props.shortlist, restaurant) : 
-    	null
-    this.props.addToShortlist(restaurant)
-  	this.props.changeRestaurant(index)
+  	if(this.nextPage){
+  		getMoreRestaurants(this.props.restaurant.restaurant['my_location'], this.props.restaurant.restaurant['next_page'])
+  			.then((newRestsArray) => {
+  			  this.nextPage = false
+					this.props.updateRestaurants(newRestsArray)
+					this.props.changeRestaurant(0)
+  			})
+  	} else {
+	    this.props.user.name ? 
+	    	updateServer(this.props.shortlist, restaurant) : 
+	    	null
+	    this.props.addToShortlist(restaurant)
+	  	this.props.changeRestaurant(index)
+  	}
   }
 
+	componentDidUpdate () {
+  	if(this.props.restaurant.index === 20 && this.props.restaurant.restaurant['next_page'] ) {
+  		this.nextPage = true
+  	} 
+	}
 
-	render  () {
+ 	render  () {
 		const {restaurant, index, ShowDetail } = this.props.restaurant
 		const {changeViewDetail} = this.props
 

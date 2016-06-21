@@ -10,7 +10,7 @@ export class Login extends Component {
 
   render() {
     const {name, picture} = this.props.user
-    console.log(this.props.user)
+   
     if (!name) {
       return (
         <div>

@@ -10,7 +10,6 @@ import getUser from '../helpers/get-user.js'
 import Splash from './splash.jsx'
 import simulate from '../../lib/simulate-get-restaurants'
 
-
 export class App extends Component {
 
   constructor (props) {
@@ -23,17 +22,16 @@ export class App extends Component {
   }
 
   render() {
- 
-    if (this.props.preferences.updated) {
-      getLocation(this.props.preferences.distance)
+
+    const { nextPage, user, preferences, restaurant, updateRestaurants } = this.props
+  
+    if (preferences.updated ) {
+      getLocation(preferences.distance)
         .then(getRestaurants)
-        .then((restaurants) => {
-          this.props.updateRestaurants(restaurants)
-        })
+        .then(updateRestaurants)
 
      return (
         <div>
-          <Navbar />
           <Splash />
         </div>
       )
@@ -50,10 +48,12 @@ export class App extends Component {
 
 function mapStateToProps (state) {
   return {
+    location: state.Location,
     restaurant: state.Restaurant,
     preferences: state.Preferences,
     user: state.User,
-    shortlist: state.ShortList
+    shortlist: state.ShortList,
+    nextPage: state.NextPage
   }
 }
 
