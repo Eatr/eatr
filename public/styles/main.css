@@ -2,6 +2,9 @@
 
 /*errthang large mobile screen and smaller*/
 @media (max-width:375px){
+	html{
+		background: #4E3D66;
+	}
 	#main{
 	display: flex;
 	flex-direction: column;
@@ -12,8 +15,9 @@
 
 	/*nav bar*/
 	.nav-icon {
-		height: 50px;
-		width: 50px;
+		height: 30px;
+		width: 30px;
+		padding: 20px;
 	  border-radius: 500px;
 	}
 
@@ -34,57 +38,86 @@
 	}
 
 	#eater-logo{
-		max-height: 50px;
+		max-height: 100px;
+		margin-bottom: -20px;
+		margin-top: -10px;
 	}
 
 	/* Shortlist view */
 	.shortlist-restaurant {
 		display: block;
+		background: white;
+		padding: 5px;
+		margin-bottom: 15px;
 	}
 
 	.SL-item {
 		vertical-align: middle;
-		height: 70px;
-		width: 100px;
-		display: inline
-		margin: 0;
-		margin-bottom: 0;
-		padding: 0;
+		height: 90px;
+		width: 150px;
+		display: inline;
+		margin: 10px;
+		padding: 5px;
 	}
 	.SL-detail {
-		vertical-align: middle;
-		height: 70px;
-		width: 300px;
-		display: inline;
+		margin: 5px;
+		padding: 5px;
+		text-overflow: none;
+		display: block-inline;
 	}
-
+	.remove-restaurant {
+		justify-content: right;
+		display: inline;
+		height: 50px;
+		width: 90px;
+		right:100%;
+		vertical-align: middle;
+		border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		border: 1px solid #b5b5b5;
+	}
 	/*restaurant component*/
 
 	#restaurant-container{
 	  display: flex;
 	  flex-direction: column;
 	  max-height: 350px;
-	  
-
-
+		text-align: left;
 	}
-
+	#restaurant-container h3 {
+		margin-bottom: -20px;
+		margin-top: 2px;
+		margin-left: 10px; 
+		text-align: left;
+	}
+	#restaurant-container h6 {
+		margin-bottom: -15px;
+		margin-left: 10px; 
+		text-align: left;
+		color: grey;
+	}
 	#restaurant-card{
+		background: white;
 	  display: flex;
-      flex-direction: column;
-    
+    flex-direction: column;
+    margin-bottom: 30px;
+   
 	  width: 275px;
 	  min-height: 285px;
+	  height: 100%;
+
 	  padding-top: 5px;
 
-	  -webkit-box-shadow: 6px 7px 17px -1px rgba(0,0,0,0.65);
-	  -moz-box-shadow: 6px 7px 17px -1px rgba(0,0,0,0.65);
-	  box-shadow: 6px 7px 17px -1px rgba(0,0,0,0.65);
-	  
+	  -webkit-transition: -webkit-transform .15s linear;
+	  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+	  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+	  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+	  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
 	}
-
+	
 	#img-window{
-		max-height: 250px;
+		max-height: 270px;
 		overflow: hidden;
 		margin: 5px;
 		display: flex;
@@ -95,7 +128,7 @@
 	#restaurant-image {
 	  width: 95%;
     height: 200px;
-
+    margin:7px;
 	}
 
 
@@ -105,10 +138,30 @@
 		width: 50px;
 	}
 	#yeahnah-container {
+		margin-top: 20px;
 	  display: flex;
 	  flex-wrap: nowrap;
 	  justify-content: space-around;
 	}
+
+	.night-hotel {
+
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  padding: 20px;
+  border: none;
+  font: normal 60px/1 "Monoton", Helvetica, sans-serif;
+  color: rgba(255,255,255,1);
+  text-align: center;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  text-shadow: 0 0 10px rgb(255,255,255) , 0 0 20px rgb(255,255,255) , 0 0 30px rgb(255,255,255) , 0 0 40px rgb(255,17,119) , 0 0 70px rgb(255,17,119) , 0 0 80px rgb(255,17,119) , 0 0 100px rgb(255,17,119) , 0 0 150px rgb(255,17,119) ;
+  -webkit-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  -moz-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  -o-transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+  transition: all 200ms cubic-bezier(0.42, 0, 0.58, 1) 10ms;
+}
 
 }
 

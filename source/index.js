@@ -1,4 +1,4 @@
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -13,7 +13,6 @@ import ReactDOM from 'react-dom'
 
 const store = createStore(reducer)
 
-
 const routes = <Route>
 	  <Route path="/" component={AppContainer} />
 		<Route path='/filter' component={FilterContainer} />
@@ -23,7 +22,7 @@ const routes = <Route>
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router >{routes}</Router>
+    <Router history={browserHistory}>{routes}</Router>
   </Provider>,
   document.getElementById('main')
 )

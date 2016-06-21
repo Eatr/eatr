@@ -34,7 +34,7 @@ class Restaurant extends React.Component {
  	}
 
   swipeRight(index, restaurant) {
-  	if(index === 19 && restaurant['next_page'] ) {
+  	if(index === 7 && restaurant['next_page'] ) {
   		this.nextPage = true
   	}
 
@@ -45,7 +45,7 @@ class Restaurant extends React.Component {
 	  	user,
 	  	shortlist,
 		  addToShortlist} = this.props
-	    
+	    console.log(shortlist, "This is the fucking beast.")
 	  if(this.nextPage){
 		    user.name ? updateServer(shortlist, restaurant) : null
 		    addToShortlist(restaurant)
@@ -73,6 +73,7 @@ class Restaurant extends React.Component {
  	render  () {
 		const {restaurant, index, ShowDetail } = this.props.restaurant
 		const {changeViewDetail} = this.props
+
 			if (this.nextPage) {
 				return (<Splash />)
 			}else {
@@ -84,9 +85,7 @@ class Restaurant extends React.Component {
 						<div id="restaurant-card" onClick={() => changeViewDetail() }>
 							<img id="restaurant-image" src={restaurant.photo}/>
 							<h3 className="restaurant-details-short">{restaurant.name}</h3>
-							<ul>
-								<li>{restaurant.distance}m away from your location</li>
-							</ul>
+								<h6>{restaurant.distance}m away from your location</h6>
 								{(ShowDetail)? 
 									<Details 
 										website={restaurant.website} 

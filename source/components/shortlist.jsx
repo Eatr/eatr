@@ -35,16 +35,15 @@ export default class Shortlist extends Component {
 					</main>
 				</div>
 				)
-		} else {
-			return (
+		} else {			return (
 				<div>
 					<Navbar/>
 					<main id='shortlist'>
 					{shortlist.map((restaurant) => {
 						return (
-							<Swipeable  
-							delta={50} 
-							onSwipedLeft={	() => this.handleClick(restaurant) } >
+							<Swipeable
+							delta={50}
+							onSwipedLeft={() => this.handleClick(restaurant)}>
 							<div	className="shortlist-restaurant">
 								<Navlink to="/">
 									<img 
@@ -52,17 +51,16 @@ export default class Shortlist extends Component {
 										src={restaurant.photo} 
 										onClick={()=> this.showRestaurant(restaurant)}/>
 								</Navlink>
-								<h6  className="SL-detail">{restaurant.name}</h6>
 								<button 
-									className="SL-item remove-restaurant" 
+									className="remove-restaurant" 
 									onClick={()=>{this.handleClick(restaurant)}}>
 										Remove
 								</button>
+								<h4  className="SL-detail">{restaurant.name}</h4>
 							</div>
 						</Swipeable>
 						)
-					})}
-						
+					})}	
 					</main>
 				</div>)
 		}
