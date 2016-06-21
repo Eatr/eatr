@@ -44,7 +44,7 @@ export default class Restaurant extends React.Component {
   }
 
 	componentDidUpdate () {
-  	if(this.props.restaurant.index === 20 && this.props.restaurant.restaurant['next_page'] ) {
+  	if(this.props.restaurant.index === 19 && this.props.restaurant.restaurant['next_page'] ) {
   		this.nextPage = true
   	} 
 	}
