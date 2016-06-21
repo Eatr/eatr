@@ -58,6 +58,14 @@ export const showRestaurant = (restaurant) => {
 	}
 }
 
+export const toggleNextPage = () => {
+
+	return {
+		type: 'TOOGLE_NEXTPAGE'
+	}
+}
+
+
 
 
 

@@ -18,7 +18,10 @@ const INITIALSTATE = {
 		index: 0,
 		ShowDetail: false
 	},
-	User: {name: null}
+	User: {name: null},
+	Location: []
+	
+
 }
 
 const changeRestaurant = (state) => {
@@ -46,6 +49,7 @@ export default (state = INITIALSTATE, action) => {
 			newState.Restaurants = action.state
 			newState.Preferences.updated = false
 			newState.Restaurant.restaurant = newState.Restaurants[0]
+			// newState.NextPage = false
 			return newState
 
 		case 'CHANGE_PREFERENCES' :
@@ -74,16 +78,14 @@ export default (state = INITIALSTATE, action) => {
 				index: action.index,
 				restaurant: newState.Restaurants[action.index]
 			}
- 
-			return newState
+ 			return newState
 
 		case 'SHOW_RESTAURANT' :
 			newState.Restaurant = {
 				index: 0,
 				restaurant: action.restaurant
 			}
-		
-			return newState
+
 		default :
 			return state
 

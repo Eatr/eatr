@@ -1,8 +1,10 @@
 import request from 'browser-request'
 
-export default (location) => {
+export default (location, nextPageToken) => {
 	return new Promise ((resolve, reject) => {
-		request(`/restaurants/${location[0]}/${location[1]}/${location[2]}`, (err, response) => {
+
+		
+		request(`/nextpage/${location[0]}/${location[1]}/${nextPageToken}`, (err, response) => {
 			if (err) {
 				console.log(err)
 			} else {
@@ -10,5 +12,6 @@ export default (location) => {
 			}
 		})
 	})
-}
 
+
+}
