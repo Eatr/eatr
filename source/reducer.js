@@ -18,7 +18,7 @@ const INITIALSTATE = {
 		index: 0,
 		ShowDetail: false
 	},
-	User: {name: null},
+	User: {name: 'none'},
 	Location: []
 	
 
@@ -46,10 +46,14 @@ export default (state = INITIALSTATE, action) => {
 
 	switch (action.type) {
 		case 'UPDATE_RESTAURANTS' :
-			newState.Restaurants = action.state
+			newState.Restaurants = action.state.restaurantObjects
 			newState.Preferences.updated = false
 			newState.Restaurant.restaurant = newState.Restaurants[0]
-			// newState.NextPage = false
+			newState.Restaurant.index = 0
+			return newState
+
+		case 'UPDATE_LOCATION' :
+			newState.Location = action.state
 			return newState
 
 		case 'CHANGE_PREFERENCES' :

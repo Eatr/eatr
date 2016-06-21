@@ -1,10 +1,9 @@
 import request from 'browser-request'
 
 export default (location, nextPageToken) => {
+	const [lat, lon] = location
 	return new Promise ((resolve, reject) => {
-
-		
-		request(`/nextpage/${location[0]}/${location[1]}/${nextPageToken}`, (err, response) => {
+		request(`/nextpage/${lat}/${lon}/${nextPageToken}`, (err, response) => {
 			if (err) {
 				console.log(err)
 			} else {
