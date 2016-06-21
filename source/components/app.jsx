@@ -32,15 +32,12 @@ export class App extends Component {
 
      return (
         <div>
-        <p>{user.name}</p>
-          <Navbar />
           <Splash />
         </div>
       )
     } else {
       return (
         <div>
-        <p>{user.name}</p>
           <Navbar />
           <Restaurant {...this.props} />
         </div>

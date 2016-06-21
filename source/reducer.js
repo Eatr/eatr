@@ -18,7 +18,7 @@ const INITIALSTATE = {
 		index: 0,
 		ShowDetail: false
 	},
-	User: {name: ""}
+	User: {name: null}
 }
 
 const changeRestaurant = (state) => {

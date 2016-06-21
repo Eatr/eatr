@@ -12,7 +12,9 @@ export default class Shortlist extends Component {
 	}
 
 	handleClick(restaurant) {
-		updateServer(this.props.shortlist, restaurant, 'remove')
+		this.props.user.name ? 
+			updateServer(this.props.shortlist, restaurant, 'remove') :
+    	null
 		this.props.removeFromShortList(restaurant.id)
 	}
 
@@ -69,7 +71,8 @@ export default class Shortlist extends Component {
 
 const mapStateToProps =  (state) => {
   return {
-    shortlist: state.ShortList
+    shortlist: state.ShortList,
+    user: state.User
   }
 }
 

@@ -98,6 +98,7 @@ doesnt exist yet
 	 -Errthang
 	
 	Lauren
+	 -become a tab minimalist, just like Joseph
 	 -Redux
 	 -React-redux
 	 -Responsive design
