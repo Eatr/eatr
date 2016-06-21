@@ -3,7 +3,14 @@ import YeahNahBar from './yeah-nah-bar.jsx'
 import Details from './restaurant-details.jsx'
 var Swipeable = require('react-swipeable')
 import updateServer from '../helpers/update-server.js'
-export default class Restaurant extends React.Component {
+import getUser from '../helpers/get-user.js'
+
+import {connect} from 'react-redux'
+
+import * as actionCreators from '../action-creators';
+
+
+class Restaurant extends React.Component {
 
 	constructor(props) {
 		super(props)
@@ -21,13 +28,16 @@ export default class Restaurant extends React.Component {
   	this.props.changeRestaurant(index)
   }
 
+  componentWillMount () {
+    getUser()
+      .then(this.props.updateUser)
+  }
 
 	render  () {
 		const {restaurant, index, ShowDetail } = this.props.restaurant
 		const {changeViewDetail} = this.props
-
-		return (
-		  <Swipeable 
+		  
+		  return (<Swipeable 
 			  delta={50} 
 			  onSwipedLeft={() => this.swipeLeft(index+1)}
 		  	onSwipedRight={() => this.swipeRight(index+1,restaurant)}>
@@ -53,7 +63,20 @@ export default class Restaurant extends React.Component {
 				</div>
 			</Swipeable>
 		)
-
 	}
-
 }
+
+
+function mapStateToProps (state) {
+  return {
+    restaurant: state.Restaurant,
+    // preferences: state.Preferences,
+    user: state.User,
+    shortlist: state.ShortList
+  }
+}
+
+export const RestaurantContainer = connect(
+  mapStateToProps,
+  actionCreators
+  )(Restaurant)

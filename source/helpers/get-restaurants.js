@@ -6,6 +6,7 @@ export default (location) => {
 			if (err) {
 				console.log(err)
 			} else {
+				console.log(JSON.parse(response.responseText))
 				resolve(JSON.parse(response.responseText))
 			}
 		})

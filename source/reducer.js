@@ -43,7 +43,7 @@ export default (state = INITIALSTATE, action) => {
 
 	switch (action.type) {
 		case 'UPDATE_RESTAURANTS' :
-			newState.Restaurants = action.state
+			newState.Restaurants = action.state.restaurantObjects
 			newState.Preferences.updated = false
 			newState.Restaurant.restaurant = newState.Restaurants[0]
 			return newState

@@ -3,10 +3,11 @@ import {connect} from 'react-redux'
 import * as actionCreators from '../action-creators';
 import { createStore } from 'redux'
 import Navbar from './navbar.jsx'
-import Restaurant from './restaurant.jsx'
+import Logo from './logo.jsx'
+import {RestaurantContainer} from './restaurant.jsx'
 import getLocation from '../helpers/get-location.js'
 import getRestaurants from '../helpers/get-restaurants.js'
-import getUser from '../helpers/get-user.js'
+
 import Splash from './splash.jsx'
 import simulate from '../../lib/simulate-get-restaurants'
 
@@ -17,14 +18,10 @@ export class App extends Component {
     super(props)
   }
 
-  componentWillMount () {
-    getUser()
-      .then(this.props.updateUser)
-  }
-
   render() {
- 
+  
     if (this.props.preferences.updated) {
+    console.log('once in client')
       getLocation(this.props.preferences.distance)
         .then(getRestaurants)
         .then((restaurants) => {
@@ -33,7 +30,7 @@ export class App extends Component {
 
      return (
         <div>
-          <Navbar />
+          <Logo />
           <Splash />
         </div>
       )
@@ -41,7 +38,8 @@ export class App extends Component {
       return (
         <div>
           <Navbar />
-          <Restaurant {...this.props} />
+          <RestaurantContainer />
+
         </div>
       )
     }
@@ -50,10 +48,10 @@ export class App extends Component {
 
 function mapStateToProps (state) {
   return {
-    restaurant: state.Restaurant,
+    //restaurant: state.Restaurant,
     preferences: state.Preferences,
-    user: state.User,
-    shortlist: state.ShortList
+    //user: state.User,
+    //shortlist: state.ShortList
   }
 }
 
