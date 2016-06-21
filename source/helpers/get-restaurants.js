@@ -1,8 +1,9 @@
 import request from 'browser-request'
 
 export default (location) => {
+	const [lat, lon, rad] = location
 	return new Promise ((resolve, reject) => {
-		request(`/restaurants/${location[0]}/${location[1]}/${location[2]}`, (err, response) => {
+		request(`/restaurants/${lat}/${lon}/${rad}`, (err, response) => {
 			if (err) {
 				console.log(err)
 			} else {

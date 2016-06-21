@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import {connect} from 'react-redux'
-import * as actionCreators from '../action-creators';
-import { createStore } from 'redux'
-import Navbar from './navbar.jsx'
-import Restaurant from './restaurant.jsx'
-import getLocation from '../helpers/get-location.js'
-import getRestaurants from '../helpers/get-restaurants.js'
-import getUser from '../helpers/get-user.js'
-import Splash from './splash.jsx'
-import simulate from '../../lib/simulate-get-restaurants'
+import React, { Component }  from 'react'
+import {connect}             from 'react-redux'
+import { createStore }       from 'redux'
+import * as actionCreators   from '../action-creators'
+import Navbar                from './navbar.jsx'
+import Logo                  from './logo.jsx'
+import {RestaurantContainer} from './restaurant.jsx'
+import getLocation           from '../helpers/get-location.js'
+import getRestaurants        from '../helpers/get-restaurants.js'
+import Splash                from './splash.jsx'
+import simulate              from '../../lib/simulate-get-restaurants'
 
 export class App extends Component {
 
@@ -16,22 +16,25 @@ export class App extends Component {
     super(props)
   }
 
-  componentWillMount () {
-    getUser()
-      .then(this.props.updateUser)
-  }
-
   render() {
-
-    const { nextPage, user, preferences, restaurant, updateRestaurants } = this.props
+    const { 
+      nextPage, 
+      user, 
+      preferences, 
+      restaurant, 
+      updateRestaurants,
+      updateLocation } = this.props
   
-    if (preferences.updated ) {
+    if (preferences.updated) {
       getLocation(preferences.distance)
-        .then(getRestaurants)
-        .then(updateRestaurants)
+        .then((location) => {
+          updateLocation(location)
+          getRestaurants(location)
+            .then(updateRestaurants)})
 
      return (
         <div>
+          <Logo />
           <Splash />
         </div>
       )
@@ -39,7 +42,7 @@ export class App extends Component {
       return (
         <div>
           <Navbar />
-          <Restaurant {...this.props} />
+          <RestaurantContainer />
         </div>
       )
     }
@@ -48,12 +51,7 @@ export class App extends Component {
 
 function mapStateToProps (state) {
   return {
-    location: state.Location,
-    restaurant: state.Restaurant,
-    preferences: state.Preferences,
-    user: state.User,
-    shortlist: state.ShortList,
-    nextPage: state.NextPage
+    preferences: state.Preferences
   }
 }
 
@@ -62,9 +60,3 @@ export const AppContainer = connect(
   actionCreators
   )(App)
 
-
-
-
-
-
-        // <Navbar />

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import * as actionCreators from '../action-creators'
-import {connect} from 'react-redux'
-import Navlink from './navlink.jsx'
-import Navbar from './navbar.jsx'
-import updateServer from '../helpers/update-server.js'
-var Swipeable = require('react-swipeable')
+import * as actionCreators 	from '../action-creators'
+import {connect} 						from 'react-redux'
+import Navlink 							from './navlink.jsx'
+import Navbar 							from './navbar.jsx'
+import updateServer 				from '../helpers/update-server.js'
+import Swipeable 						from 'react-swipeable'
 
 export default class Shortlist extends Component {
 	constructor(props) {

@@ -9,7 +9,7 @@ class Splash extends Component {
 
   render() {
     return (
-      <p>Finding Restaurants...</p>
+      <p>Finding Restaurants.....</p>
     )
   }
 }
