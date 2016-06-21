@@ -7,7 +7,7 @@ import getUser 							from '../helpers/get-user.js'
 import {connect} 						from 'react-redux'
 import getMoreRestaurants 	from '../helpers/get-more-restaurants.js'
 import * as actionCreators 	from '../action-creators';
-
+import Splash								from './splash.jsx'
 
 class Restaurant extends React.Component {
 
@@ -17,19 +17,27 @@ class Restaurant extends React.Component {
 	}
 
   swipeLeft (index) {
-  	const {location, restaurant, updateRestaurants} = this.props
+  	if(index === 19 ) {
+  		this.nextPage = true
+  	}
+  	const {location, restaurant, updateRestaurants, changeRestaurant} = this.props
 	  if(this.nextPage){
-			this.nextPage = false
 	  	getMoreRestaurants(location, restaurant['next_page'])
-				.then(newRestaurants => { 
-					console.log(newRestaurants)
-					updateRestaurants})
+				.then(updateRestaurants)
+					.then( () => {
+						this.nextPage = false
+						changeRestaurant(0)  // to trigger prop change
+						})
 	  } else {
-	  		this.props.changeRestaurant(index)
+	  	changeRestaurant(index)
   	}
  	}
 
   swipeRight(index, restaurant) {
+  	if(index === 19 && restaurant['next_page'] ) {
+  		this.nextPage = true
+  	}
+
   	const {
   		location, 
   		updateRestaurants,
@@ -39,14 +47,16 @@ class Restaurant extends React.Component {
 		  addToShortlist} = this.props
 	    
 	  if(this.nextPage){
-			  this.nextPage = false
+			  // this.nextPage = false
 		    user.name ? updateServer(shortlist, restaurant) : null
 		    addToShortlist(restaurant)
 
 		  	getMoreRestaurants(location, restaurant['next_page'])
 		  		.then(updateRestaurants)
+		  		.then(() => this.nextPage = false)
 	  	} else {
 	  		user.name ? updateServer(shortlist, restaurant) : null
+		    changeRestaurant(index)
 		    addToShortlist(restaurant)
   	}
   }
@@ -58,43 +68,40 @@ class Restaurant extends React.Component {
     }
   }
 
-	componentDidUpdate () {
-		const {index, restaurant} = this.props.restaurant
-  	if(index === 19 && restaurant['next_page'] ) {
-  		this.nextPage = true
-  	} 
-	}
-
  	render  () {
 		const {restaurant, index, ShowDetail } = this.props.restaurant
 		const {changeViewDetail} = this.props
-		console.log(restaurant)
-		  return (<Swipeable 
-			  delta={50} 
-			  onSwipedLeft={() => this.swipeLeft(index+1)}
-		  	onSwipedRight={() => this.swipeRight(index+1,restaurant)}>
-				<div id="restaurant-container" >
-					<div id="restaurant-card" onClick={() => changeViewDetail() }>
-						<img id="restaurant-image" src={restaurant.photo}/>
-						<h3 className="restaurant-details-short">{restaurant.name}</h3>
-						<ul>
-							<li>{restaurant.distance}m away from your location</li>
-						</ul>
-							{(ShowDetail)? 
-								<Details 
-									website={restaurant.website} 
-									phone={restaurant.phone} 
-									address={restaurant.address}/> : 
-								null
-							}
+		console.log(this.nextPage, index)
+			if (this.nextPage) {
+				return (<Splash />)
+			}else {
+			  return (<Swipeable 
+				  delta={50} 
+				  onSwipedLeft={() => this.swipeLeft(index+1)}
+			  	onSwipedRight={() => this.swipeRight(index+1,restaurant)}>
+					<div id="restaurant-container" >
+						<div id="restaurant-card" onClick={() => changeViewDetail() }>
+							<img id="restaurant-image" src={restaurant.photo}/>
+							<h3 className="restaurant-details-short">{restaurant.name}</h3>
+							<ul>
+								<li>{restaurant.distance}m away from your location</li>
+							</ul>
+								{(ShowDetail)? 
+									<Details 
+										website={restaurant.website} 
+										phone={restaurant.phone} 
+										address={restaurant.address}/> : 
+									null
+								}
+						</div>
+						<YeahNahBar 
+							reject={index => this.swipeLeft(index)} 
+							add={(index, restaurant) => this.swipeRight(index, restaurant)} 
+							{...this.props}/>
 					</div>
-					<YeahNahBar 
-						reject={index => this.swipeLeft(index)} 
-						add={(index, restaurant) => this.swipeRight(index, restaurant)} 
-						{...this.props}/>
-				</div>
-			</Swipeable>
-		)
+				</Swipeable>
+			)
+		}
 	}
 }
 

@@ -51,6 +51,7 @@ export default (state = INITIALSTATE, action) => {
 			newState.Preferences.updated = false
 			newState.Restaurant.restaurant = newState.Restaurants[0]
 			newState.Restaurant.index = 0
+			console.log(newState.Restaurants)
 			return newState
 
 		case 'UPDATE_LOCATION' :
