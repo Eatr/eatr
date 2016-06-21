@@ -48,10 +48,7 @@ export class App extends Component {
 
 function mapStateToProps (state) {
   return {
-    //restaurant: state.Restaurant,
     preferences: state.Preferences,
-    //user: state.User,
-    //shortlist: state.ShortList
   }
 }
 

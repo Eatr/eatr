@@ -29,8 +29,11 @@ class Restaurant extends React.Component {
   }
 
   componentWillMount () {
-    getUser()
-      .then(this.props.updateUser)
+  	if (this.props.user.name === 'none') {
+	  	console.log('get user in restaurant')
+	    getUser()
+	      .then(this.props.updateUser)
+    }
   }
 
 	render  () {
