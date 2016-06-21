@@ -1,9 +1,9 @@
 import request from 'browser-request'
 
-export default (location) => {
-	const [lat, lon, rad] = location
+export default (location, nextPageToken) => {
+	const [lat, lon] = location
 	return new Promise ((resolve, reject) => {
-		request(`/restaurants/${lat}/${lon}/${rad}`, (err, response) => {
+		request(`/nextpage/${lat}/${lon}/${nextPageToken}`, (err, response) => {
 			if (err) {
 				console.log(err)
 			} else {
@@ -11,5 +11,6 @@ export default (location) => {
 			}
 		})
 	})
-}
 
+
+}

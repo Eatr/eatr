@@ -6,6 +6,13 @@ export const updateRestaurants = (newRestaurants) => {
 	}
 }
 
+export const updateLocation = (location) => {
+	return {
+		type: 'UPDATE_LOCATION',
+		state: location.slice(0,2)
+	}
+}
+
 export const updateUser = (user = {shortlist: [], name: null}) => {
 	return {
 		type: 'UPDATE_USER',
@@ -57,6 +64,14 @@ export const showRestaurant = (restaurant) => {
 		restaurant: restaurant
 	}
 }
+
+export const toggleNextPage = () => {
+
+	return {
+		type: 'TOOGLE_NEXTPAGE'
+	}
+}
+
 
 
 
