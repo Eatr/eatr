@@ -1,9 +1,6 @@
 import request from 'browser-request'
 
 export default (location, nextPageToken) => {
-
-	console.log(location,"wednesday")
-
 	return new Promise ((resolve, reject) => {
 
 		

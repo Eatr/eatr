@@ -85,11 +85,6 @@ export default (state = INITIALSTATE, action) => {
 				index: 0,
 				restaurant: action.restaurant
 			}
-		// case 'TOOGLE_NEXTPAGE' :
-		// 	newState.NextPage = true
-		// 	newState.Preferences.updated = true
-		// 	console.log(newState.NextPage, "tuesday")
-		// 	return newState
 
 		default :
 			return state

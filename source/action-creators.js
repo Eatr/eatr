@@ -1,6 +1,5 @@
 
 export const updateRestaurants = (newRestaurants) => {
-		console.log("in action create update rests")
 	return {
 		type: 'UPDATE_RESTAURANTS',
 		state: newRestaurants

@@ -5,13 +5,11 @@ var Swipeable = require('react-swipeable')
 import updateServer from '../helpers/update-server.js'
 import getMoreRestaurants from '../helpers/get-more-restaurants.js'
 
-
 export default class Restaurant extends React.Component {
 
 	constructor(props) {
 		super(props)
 		this.nextPage = false
-
 	}
 
   swipeLeft (index) {
@@ -19,32 +17,23 @@ export default class Restaurant extends React.Component {
   	
   	getMoreRestaurants(this.props.restaurant.restaurant['my_location'], this.props.restaurant.restaurant['next_page'])
 			.then((newRestsArray) => {
-				console.log(newRestsArray)
 			  this.nextPage = false
 				this.props.updateRestaurants(newRestsArray)
 				this.props.changeRestaurant(0)
-
-
 			})
- 	  		
-
   } else {
   		this.props.changeRestaurant(index)
   	}
  	}
 
   swipeRight(index, restaurant) {
-  	
   	if(this.nextPage){
   		getMoreRestaurants(this.props.restaurant.restaurant['my_location'], this.props.restaurant.restaurant['next_page'])
   			.then((newRestsArray) => {
-  				console.log(newRestsArray )
   			  this.nextPage = false
 					this.props.updateRestaurants(newRestsArray)
 					this.props.changeRestaurant(0)
-
   			})
- 	  	
   	} else {
 	    this.props.user.name ? 
 	    	updateServer(this.props.shortlist, restaurant) : 
@@ -55,10 +44,8 @@ export default class Restaurant extends React.Component {
   }
 
 	componentDidUpdate () {
-
   	if(this.props.restaurant.index === 2 && this.props.restaurant.restaurant['next_page'] ) {
   		this.nextPage = true
-
   	} 
 	}
 
