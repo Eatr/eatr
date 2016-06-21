@@ -39,6 +39,8 @@
 
 	#eater-logo{
 		max-height: 100px;
+		margin-bottom: -20px;
+		margin-top: -10px;
 	}
 
 	/* Shortlist view */
@@ -46,7 +48,7 @@
 		display: block;
 		background: white;
 		padding: 5px;
-		margin-bottom: 10px;
+		margin-bottom: 15px;
 	}
 
 	.SL-item {
