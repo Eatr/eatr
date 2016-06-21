@@ -23,9 +23,9 @@ export class App extends Component {
 
   render() {
 
-    const { user, preferences, restaurant, updateRestaurants } = this.props
+    const { nextPage, user, preferences, restaurant, updateRestaurants } = this.props
   
-    if (preferences.updated) {
+    if (preferences.updated ) {
       getLocation(preferences.distance)
         .then(getRestaurants)
         .then(updateRestaurants)
@@ -48,10 +48,12 @@ export class App extends Component {
 
 function mapStateToProps (state) {
   return {
+    location: state.Location,
     restaurant: state.Restaurant,
     preferences: state.Preferences,
     user: state.User,
-    shortlist: state.ShortList
+    shortlist: state.ShortList,
+    nextPage: state.NextPage
   }
 }
 

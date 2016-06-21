@@ -5,45 +5,64 @@ var Swipeable = require('react-swipeable')
 import updateServer from '../helpers/update-server.js'
 import getMoreRestaurants from '../helpers/get-more-restaurants.js'
 
-export default class Restaurant extends React.Component {
 
+export default class Restaurant extends React.Component {
 
 	constructor(props) {
 		super(props)
+		this.nextPage = false
+
 	}
 
   swipeLeft (index) {
-  	this.props.changeRestaurant(index)
+  if(this.nextPage){
+  	
+  	getMoreRestaurants(this.props.restaurant.restaurant['my_location'], this.props.restaurant.restaurant['next_page'])
+			.then((newRestsArray) => {
+				console.log(newRestsArray)
+			  this.nextPage = false
+				this.props.updateRestaurants(newRestsArray)
+				this.props.changeRestaurant(0)
 
-  	this.getNewPage(this.props.restaurant)
-  }
+
+			})
+ 	  		
+
+  } else {
+  		this.props.changeRestaurant(index)
+  	}
+ 	}
 
   swipeRight(index, restaurant) {
-    this.props.user.name ? 
-    	updateServer(this.props.shortlist, restaurant) : 
-    	null
-    this.props.addToShortlist(restaurant)
-  	this.props.changeRestaurant(index)
-
-  	this.getNewPage(this.props.restaurant)
-
-  }
-
-  getNewPage(restaurant){
   	
-  	if(restaurant.index === 19) {
-  		console.log("-------- Index is at 19 ---------")
-  		getMoreRestaurants(this.props['my_location'], restaurant.restaurant['next_page'])
+  	if(this.nextPage){
+  		getMoreRestaurants(this.props.restaurant.restaurant['my_location'], this.props.restaurant.restaurant['next_page'])
+  			.then((newRestsArray) => {
+  				console.log(newRestsArray )
+  			  this.nextPage = false
+					this.props.updateRestaurants(newRestsArray)
+					this.props.changeRestaurant(0)
 
+  			})
+ 	  	
+  	} else {
+	    this.props.user.name ? 
+	    	updateServer(this.props.shortlist, restaurant) : 
+	    	null
+	    this.props.addToShortlist(restaurant)
+	  	this.props.changeRestaurant(index)
   	}
-  	
   }
 
+	componentDidUpdate () {
 
+  	if(this.props.restaurant.index === 2 && this.props.restaurant.restaurant['next_page'] ) {
+  		this.nextPage = true
 
+  	} 
+	}
 
-	render  () {
-
+ 	render  () {
 		const {restaurant, index, ShowDetail } = this.props.restaurant
 		const {changeViewDetail} = this.props
 
