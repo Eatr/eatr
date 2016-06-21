@@ -35,8 +35,7 @@ export default class Shortlist extends Component {
 					</main>
 				</div>
 				)
-		} else {
-			return (
+		} else {			return (
 				<div>
 					<Navbar/>
 					<main id='shortlist'>
@@ -46,20 +45,18 @@ export default class Shortlist extends Component {
 							delta={50}
 							onSwipedLeft={() => this.handleClick(restaurant)}>
 							<div	className="shortlist-restaurant">
-								<div id="rest-short-card">
 								<Navlink to="/">
 									<img 
 										className="SL-item" 
 										src={restaurant.photo} 
 										onClick={()=> this.showRestaurant(restaurant)}/>
 								</Navlink>
-								<h3  className="SL-detail">{restaurant.name}</h3>
 								<button 
-									className="SL-item remove-restaurant" 
+									className="remove-restaurant" 
 									onClick={()=>{this.handleClick(restaurant)}}>
 										Remove
 								</button>
-								</div>
+								<h4  className="SL-detail">{restaurant.name}</h4>
 							</div>
 						</Swipeable>
 						)
