@@ -1,6 +1,5 @@
 
 export default (radius) => {
-	return new Promise ((resolve, reject) => {
 		if (!navigator.geolocation) {
 			reject('Geolocation not supported in this browser')
 		} else {
