@@ -22,11 +22,12 @@ class Restaurant extends React.Component {
   	}
   	const {location, restaurant, updateRestaurants, changeRestaurant} = this.props
 	  if(this.nextPage){
-	  	getMoreRestaurants(location, restaurant['next_page'])
+			changeRestaurant(0)  
+	  	getMoreRestaurants(location, restaurant.restaurant['next_page'])
 				.then(updateRestaurants)
 					.then( () => {
 						this.nextPage = false
-						changeRestaurant(0)  // to trigger prop change fucking P.O.S.
+						changeRestaurant(0)
 						})
 	  } else {
 	  	changeRestaurant(index)
@@ -36,6 +37,7 @@ class Restaurant extends React.Component {
   swipeRight(index, restaurant) {
   	if(index === 19 && restaurant['next_page'] ) {
   		this.nextPage = true
+  		
   	}
 
   	const {
@@ -49,7 +51,7 @@ class Restaurant extends React.Component {
 	  if(this.nextPage){
 		    user.name ? updateServer(shortlist, restaurant) : null
 		    addToShortlist(restaurant)
-
+		    changeRestaurant(0) 
 		  	getMoreRestaurants(location, restaurant['next_page'])
 		  		.then(updateRestaurants)
 		  		.then( () => {
@@ -71,8 +73,10 @@ class Restaurant extends React.Component {
   }
 
  	render  () {
+
 		const {restaurant, index, ShowDetail } = this.props.restaurant
 		const {changeViewDetail} = this.props
+
 
 			if (this.nextPage) {
 				return (<Splash />)
