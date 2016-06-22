@@ -39,6 +39,7 @@
 	}
 	/* logo hearder area*/
 	#top-header{
+		padding-top: 20px;
 	  display: flex;
 	  justify-content: center;
 	}
