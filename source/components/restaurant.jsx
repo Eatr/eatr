@@ -34,7 +34,7 @@ class Restaurant extends React.Component {
  	}
 
   swipeRight(index, restaurant) {
-  	if(index === 7 && restaurant['next_page'] ) {
+  	if(index === 19 && restaurant['next_page'] ) {
   		this.nextPage = true
   	}
 
@@ -95,7 +95,7 @@ class Restaurant extends React.Component {
 										name={restaurant.name}
 										website={restaurant.website} 
 										phone={restaurant.phone} 
-										address={restaurant.address}/> : 
+										address={restaurant.address} /> : 
 									null
 								}
 						</div>

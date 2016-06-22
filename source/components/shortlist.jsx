@@ -20,6 +20,7 @@ export default class Shortlist extends Component {
 
 	showRestaurant(restaurant) {
 		this.props.showRestaurant(restaurant)
+		this.props.history.push('/')
 	}
 
 
@@ -31,7 +32,7 @@ export default class Shortlist extends Component {
 				<div>
 					<Navbar/>
 					<main id='shortlist'>
-						<p>Nothing in your shorty yet</p>
+						<p id="SL-empty-message">Nothing in your shorty yet</p>
 					</main>
 				</div>
 				)
@@ -51,10 +52,10 @@ export default class Shortlist extends Component {
 										onClick={()=>{this.handleClick(restaurant)}}>
 										<img className="yeahnah-button" src="./images/nope.png" alt="nope"/>
 									</button>
-									<Navlink to="/">
-										<p  className="SL-detail">{restaurant.name}</p>
+									
+										<p onClick={() => {this.showRestaurant(restaurant)}} className="SL-detail">{restaurant.name}</p>
 										
-									</Navlink>
+								
 								</div>
 							</Swipeable>
 						)
