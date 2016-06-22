@@ -40,7 +40,7 @@ export class App extends Component {
       )
     } else {
       return (
-        <div>
+        <div id="app-container">
           <Navbar />
           <RestaurantContainer />
         </div>

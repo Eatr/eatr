@@ -7,14 +7,12 @@ export default () => {
 
 	return (
     <header>
-      <Logo />
+      
       <nav id='navbar'>
     		<Navlink to='/filter'>
           <img className="nav-icon" src="./images/settings-icon.png" alt="filter"/>
         </Navlink>
-    		<Navlink to='/shortlist'>
-          <img className="nav-icon" src="./images/shortlist-icon.png" alt="shortlist"/>
-        </Navlink>
+    		<Logo />
     		<Navlink to='/login'>
           <img className="nav-icon" src="./images/login.png" alt="login"/>
         </Navlink>

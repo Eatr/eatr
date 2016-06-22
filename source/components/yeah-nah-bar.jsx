@@ -1,4 +1,5 @@
 import React from 'react'
+import Navlink from './navlink.jsx'
 
 export default class YeahNahBar extends React.Component {
   constructor(props) {
@@ -14,6 +15,9 @@ export default class YeahNahBar extends React.Component {
         id="nope">
           <img className="yeahnah-button" src="./images/slide_arrow_left.png" alt="nope"/>
       </button>
+      <Navlink to='/shortlist'>
+        <img className="nav-icon" src="./images/shortlist-icon.png" alt="shortlist"/>
+      </Navlink>
       <button 
         onClick={() => add(restaurant.index+1,restaurant.restaurant)} 
         id="yeah">
