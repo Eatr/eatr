@@ -1,9 +1,10 @@
 
 
-/*errthang large mobile screen and smaller*/
+/* Errthang smaller than 375 */
 @media (max-width:375px){
 	p, a{
 		color: black;
+		text-decoration: none;
 	}
 	#main{
 	display: flex;
@@ -39,6 +40,7 @@
 	}
 	/* logo hearder area*/
 	#top-header{
+		padding-top: 20px;
 	  display: flex;
 	  justify-content: center;
 	}
@@ -51,10 +53,16 @@
 
 	/* Shortlist view */
 	.shortlist-restaurant {
-		display: block;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 		background: white;
 		padding: 5px;
 		margin-bottom: 15px;
+		border-radius: 5px;
+		-webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+    -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
 	}
 
 	.SL-item {
@@ -64,12 +72,13 @@
 		display: inline;
 		margin: 10px;
 		padding: 5px;
+		border-radius: 10px;
+
 	}
 	.SL-detail {
 		margin: 5px;
 		padding: 5px;
-		text-overflow: none;
-		display: block-inline;
+
 	}
 	.remove-restaurant {
 		justify-content: right;
@@ -175,16 +184,27 @@
 	/*yeah nah bar*/
 
 	.yeahnah-button{
-		width: 50px;
+
 		-webkit-user-select: none;
- 		cursor: zoom-in;
-		border: 5px solid #E6E6E6 ;
-		border-radius: 100%;
-		width: 50px;
-		height: auto;
+		 cursor: zoom-in;
+		 border: 5px solid #E6E6E6 ;
+		 border-radius: 100%;
+		 width: 50px;
+		 height: auto
+
 	}
+
+	.shortlist-restaurant #nope .yeahnah-button{
+		-webkit-user-select: none;
+		 cursor: zoom-in;
+		 border: 5px solid #E6E6E6 ;
+		 border-radius: 100%;
+		 width: 30px;
+		 height: auto
+	}
+
 	#yeahnah-container {
-		margin-top: 20px;
+		margin-top: 60px;
 	  display: flex;
 	  flex-wrap: nowrap;
 	  justify-content: space-around;
@@ -215,8 +235,217 @@
 	}
 }
 
-/*errthang larger than a large mobile*/
+/* errthang larger than 376 */
 @media (min-width:376px){
+	html {
+		background-color: rgb(239, 239, 239)
+	}
+		p, a{
+			color: black;
+		}
+		#main{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		background-color: rgb(239, 239, 239);
+		min-height: 800px; */
+
+		}
+
+
+		/*nav bar*/
+		.nav-icon {
+			height: 30px;
+			width: 30px;
+			padding: 20px;
+		  border-radius: 500px;
+		}
+		#SL-nav-icon{
+			height: 48px;
+			width: 72px;
+			padding: 20px;
+		  border-radius: 500px;
+		}
+		#navbar {
+			display:flex;
+			flex-wrap: nowrap;
+			justify-content: space-around;
+
+		}
+
+		#distance-slider {
+		  padding: 20px;
+		}
+		/* logo hearder area*/
+		#top-header{
+			padding-top: 20px;
+		  display: flex;
+		  justify-content: center;
+		}
+
+		#eater-logo{
+			max-height: 80px;
+			margin-bottom: -20px;
+			margin-top: -10px;
+		}
+
+		/* Shortlist view */
+		.shortlist-restaurant {
+			display: block;
+			background: white;
+			padding: 5px;
+			margin-bottom: 15px;
+			border-radius: 5px;
+			justify-content: space-between;
+			-webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+			-moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+		}
+
+		.SL-item {
+			vertical-align: middle;
+			height: 90px;
+			width: 150px;
+			display: inline;
+			margin: 10px;
+			padding: 5px;
+			border-radius: 10px;
+		}
+		.SL-detail {
+			margin: 5px;
+			padding: 5px;
+			
+		}
+		.remove-restaurant {
+		/*	justify-content: right;
+			display: inline;
+			height: 50px;
+			width: 90px;
+			right:100%;
+			vertical-align: middle;
+			border-radius: 10px 10px 10px 10px;
+			-moz-border-radius: 10px 10px 10px 10px;
+			-webkit-border-radius: 10px 10px 10px 10px;
+			border: 1px solid #b5b5b5;*/
+		}
+
+	 .short-details{
+	 	margin: 0px;
+	 	font-size: 1em;
+	 }
+
+		#app-container {
+			background: white;
+			max-width: 500px; 
+			width: 100%;
+		}
+		/*restaurant component*/
+
+		#restaurant-container{
+			width: 100%;
+		  display: flex;
+		  flex-direction: column;
+		  text-align: left;
+			align-items: center;
+			overflow: hidden;
+	    margin-top: 50px;
+		}
+		#restaurant-container h3 {
+			
+			text-align: left;
+		}
+		
+		.gray-text {
+			color: grey;
+		}
+
+		#restaurant-card{
+			
+		  display: flex;
+	    flex-direction: column;
+	    
+	   
+			width:80%;
+	   
+		  height: 300px;
+			
+			border-radius: 5px;
+		  padding-top: 2px;
+		  overflow: scroll;
+		  -webkit-transition: -webkit-transform .15s linear;
+		  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+		  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+		  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+		  -moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+		}
+
+		#img-window{
+			min-height: 250px;
+			height: 250px;
+			max-height: 250px;
+			overflow: hidden;
+			margin: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+				
+		}
+
+		#restaurant-image {
+		  max-width: 90%;
+	  
+	    margin:7px;
+	    border-radius: 5px;
+		}
+	#description-window{
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: space-between;
+	  padding-left: 4%;
+	  padding-right: 4%;
+	}
+
+	#rest-details {
+		font-size: 0.85em;
+		text-align: left;
+		padding-left: 4%;
+	  padding-right: 4%;
+	  padding-top: 40px;
+	}
+
+	#long-heading{
+		text-align: left;
+		font-size: 0.95em;
+		margin: 0px
+
+	}
+		/*yeah nah bar*/
+
+		.yeahnah-button{
+			-webkit-user-select: none;
+			 cursor: zoom-in;
+			 border: 5px solid #E6E6E6 ;
+			 border-radius: 100%;
+			 width: 50px;
+			 height: auto
+		}
+
+		.shortlist-restaurant #nope .yeahnah-button{
+			-webkit-user-select: none;
+			 cursor: zoom-in;
+			 border: 5px solid #E6E6E6 ;
+			 border-radius: 100%;
+			 width: 30px;
+			 height: auto
+		}
+		#yeahnah-container {
+			margin-top: 60px;
+		  display: flex;
+		  flex-wrap: nowrap;
+		  justify-content: space-around;
+			margin-bottom: 100px;
+			margin-top: 60px;
+		}
+		
 
 
 

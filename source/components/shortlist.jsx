@@ -42,23 +42,21 @@ export default class Shortlist extends Component {
 					{shortlist.map((restaurant) => {
 						return (
 							<Swipeable
-							delta={50}
-							onSwipedLeft={() => this.handleClick(restaurant)}>
-							<div	className="shortlist-restaurant">
-								<Navlink to="/">
-									<img 
-										className="SL-item" 
-										src={restaurant.photo} 
-										onClick={()=> this.showRestaurant(restaurant)}/>
-								</Navlink>
-								<button 
-									className="remove-restaurant" 
-									onClick={()=>{this.handleClick(restaurant)}}>
-										Remove
-								</button>
-								<h4  className="SL-detail">{restaurant.name}</h4>
-							</div>
-						</Swipeable>
+								delta={50}
+								onSwipedLeft={() => this.handleClick(restaurant)}
+							>
+								<div	className="shortlist-restaurant">
+									<button 
+										id="nope" 
+										onClick={()=>{this.handleClick(restaurant)}}>
+										<img className="yeahnah-button" src="./images/nope.png" alt="nope"/>
+									</button>
+									<Navlink to="/">
+										<p  className="SL-detail">{restaurant.name}</p>
+										
+									</Navlink>
+								</div>
+							</Swipeable>
 						)
 					})}	
 					</main>
