@@ -15,7 +15,7 @@ class Distance extends React.Component {
     return (
       <div>
         <h4>Distance: {this.props.preferences.distance} meters</h4>
-        <Slider id='distance' step={100} min={200} max={1000} defaultValue={this.props.preferences.distance}
+        <Slider vertical id='distance' step={100} min={200} max={1000} defaultValue={this.props.preferences.distance}
           onChange={(val) =>{this.distanceChange(val)}}/>
       </div>
     )
