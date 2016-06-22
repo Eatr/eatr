@@ -87,7 +87,8 @@ export default (state = INITIALSTATE, action) => {
 		case 'SHOW_RESTAURANT' :
 			newState.Restaurant = {
 				index: 0,
-				restaurant: action.restaurant
+				restaurant: action.restaurant,
+				ShowDetail: true
 			}
 
 		default :
