@@ -52,11 +52,8 @@ export default class Shortlist extends Component {
 										<img className="yeahnah-button" src="./images/nope.png" alt="nope"/>
 									</button>
 									<Navlink to="/">
-										<h4  className="SL-detail">{restaurant.name}</h4>
-										<img 
-											className="SL-item" 
-											src={restaurant.photo} 
-											onClick={()=> this.showRestaurant(restaurant)}/>
+										<p  className="SL-detail">{restaurant.name}</p>
+										
 									</Navlink>
 								</div>
 							</Swipeable>

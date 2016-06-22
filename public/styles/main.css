@@ -4,6 +4,7 @@
 @media (max-width:375px){
 	p, a{
 		color: black;
+		text-decoration: none;
 	}
 	#main{
 	display: flex;
@@ -52,7 +53,10 @@
 
 	/* Shortlist view */
 	.shortlist-restaurant {
-		display: block;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 		background: white;
 		padding: 5px;
 		margin-bottom: 15px;
@@ -74,8 +78,7 @@
 	.SL-detail {
 		margin: 5px;
 		padding: 5px;
-		text-overflow: none;
-		display: block-inline;
+
 	}
 	.remove-restaurant {
 		justify-content: right;
@@ -190,6 +193,16 @@
 		 height: auto
 
 	}
+
+	.shortlist-restaurant #nope .yeahnah-button{
+		-webkit-user-select: none;
+		 cursor: zoom-in;
+		 border: 5px solid #E6E6E6 ;
+		 border-radius: 100%;
+		 width: 30px;
+		 height: auto
+	}
+
 	#yeahnah-container {
 		margin-top: 60px;
 	  display: flex;
@@ -283,7 +296,7 @@
 			padding: 5px;
 			margin-bottom: 15px;
 			border-radius: 5px;
-
+			justify-content: space-between;
 			-webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
 			-moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
 		}
@@ -300,8 +313,7 @@
 		.SL-detail {
 			margin: 5px;
 			padding: 5px;
-			text-overflow: none;
-			display: block-inline;
+			
 		}
 		.remove-restaurant {
 		/*	justify-content: right;
@@ -414,6 +426,15 @@
 			 border: 5px solid #E6E6E6 ;
 			 border-radius: 100%;
 			 width: 50px;
+			 height: auto
+		}
+
+		.shortlist-restaurant #nope .yeahnah-button{
+			-webkit-user-select: none;
+			 cursor: zoom-in;
+			 border: 5px solid #E6E6E6 ;
+			 border-radius: 100%;
+			 width: 30px;
 			 height: auto
 		}
 		#yeahnah-container {
