@@ -21,10 +21,14 @@ export class Login extends Component {
             </section>
             <section>
               <a id='facebook-link' class='login-button' href="/auth/facebook" alt='Login with Facebook'>
-                <button>Login with Facebook</button>
+                <button>
+                  <img className="login-with" src='./images/sign-in-with-facebook.png' />
+                </button>
               </a>
-              <a  id='Twitter-link' class='login-button' href="/auth/twitter" alt='Login with Twitter'>
-                <button>Login with Twitter</button>
+              <a  src='./images/sign-in-with-twitter-link.png' id='Twitter-link' class='login-button' href="/auth/twitter" alt='Login with Twitter'>
+                <button>
+                <img className="login-with" src='./images/sign-in-with-twitter.png' />
+                </button>
               </a>
             </section>
           </div>
@@ -36,9 +40,9 @@ export class Login extends Component {
           <div id='login-box'>
             <section id='user-details'>
               <div id='user-image'>
-                <img src={picture} alt='profile pic'/>
+                <img id="user-image" src={picture} alt='profile pic'/>
               </div>
-              <p>Hey {name}, we are you eating tonight?</p>
+              <p>Hey {name}, where are you eating tonight?</p>
             </section>
           </div>
         </div>)
