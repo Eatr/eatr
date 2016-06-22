@@ -36707,15 +36707,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function (radius) {
-	if (!navigator.geolocation) {
-		reject('Geolocation not supported in this browser');
-	} else {
-		navigator.geolocation.getCurrentPosition(function (location) {
-			resolve([location.coords.latitude, location.coords.longitude, radius]);
-		}, function () {
-			reject('nope');
-		});
-	}
+	return new Promise(function (resolve, reject) {
+		if (!navigator.geolocation) {
+			reject('Geolocation not supported in this browser');
+		} else {
+			navigator.geolocation.getCurrentPosition(function (location) {
+				resolve([location.coords.latitude, location.coords.longitude, radius]);
+			}, function () {
+				reject('nope');
+			});
+		}
+	});
 };
 
 },{}],343:[function(require,module,exports){
