@@ -1,11 +1,13 @@
 import React from 'react'
 
 
-export default ({website, phone, address}) => {
+export default ({name, website, phone, address}) => {
+	
 	return 	(<div id="rest-details">
-				<h6><a href={website}>Website</a></h6>
-				<h6>{phone}</h6>
-				<h6>{address}</h6>
+				<h6 id="long-heading">About {name}</h6>
+				<p ><a href={website}>Website</a></p>
+				<p >{phone}</p>
+				<p >{address}</p>
 			</div>
 	)
 }

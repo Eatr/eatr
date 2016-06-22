@@ -83,11 +83,16 @@ class Restaurant extends React.Component {
 			  	onSwipedRight={() => this.swipeRight(index+1,restaurant)}>
 					<div id="restaurant-container" >
 						<div id="restaurant-card" onClick={() => changeViewDetail() }>
-							<img id="restaurant-image" src={restaurant.photo}/>
-							<h3 className="restaurant-details-short">{restaurant.name}</h3>
-								<h6>{restaurant.distance}m away from your location</h6>
+							<div id="img-window">
+								<img id="restaurant-image" src={restaurant.photo}/>
+							</div>
+							<div id="description-window">
+								<h3 className="short-details">{restaurant.name}</h3>
+								<h6 className="short-details gray-text">{restaurant.distance}m </h6>
+							</div>
 								{(ShowDetail)? 
 									<Details 
+										name={restaurant.name}
 										website={restaurant.website} 
 										phone={restaurant.phone} 
 										address={restaurant.address}/> : 
