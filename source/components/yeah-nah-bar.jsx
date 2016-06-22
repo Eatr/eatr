@@ -13,15 +13,15 @@ export default class YeahNahBar extends React.Component {
       <button 
         onClick={() => reject(restaurant.index+1)} 
         id="nope">
-          <img className="yeahnah-button" src="./images/slide_arrow_left.png" alt="nope"/>
+          <img className="yeahnah-button" src="./images/nope.png" alt="nope"/>
       </button>
       <Navlink to='/shortlist'>
-        <img className="nav-icon" src="./images/shortlist-icon.png" alt="shortlist"/>
+        <img id="SL-nav-icon" src="./images/shortlist-icon.png" alt="shortlist"/>
       </Navlink>
       <button 
         onClick={() => add(restaurant.index+1,restaurant.restaurant)} 
         id="yeah">
-          <img className="yeahnah-button" src="./images/slide_arrow_right.png" alt="yeah"/>
+          <img className="yeahnah-button" src="./images/like.png" alt="yeah"/>
       </button>
       </div>
     )

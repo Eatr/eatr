@@ -10,11 +10,11 @@ export default () => {
       
       <nav id='navbar'>
     		<Navlink to='/filter'>
-          <img className="nav-icon" src="./images/settings-icon.png" alt="filter"/>
+          <img className="nav-icon" src="./images/preferences-icon.png" alt="filter"/>
         </Navlink>
     		<Logo />
     		<Navlink to='/login'>
-          <img className="nav-icon" src="./images/login.png" alt="login"/>
+          <img className="nav-icon" src="./images/login-icon.png" alt="login"/>
         </Navlink>
     	</nav>
     </header>

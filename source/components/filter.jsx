@@ -30,7 +30,7 @@ class Filter extends Component {
         <DistanceContainer />
         <Navlink to='/'>
           <button id='btn-done' onClick={ () => (this.handleClick()) }>
-            Done
+           <img id="SL-done-icon" src="./images/shortlist-icon.png" alt="shortlist"/>
           </button>
         </Navlink>
         
