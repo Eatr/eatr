@@ -31,7 +31,7 @@ export default class Shortlist extends Component {
 				<div>
 					<Navbar/>
 					<main id='shortlist'>
-						<p>Nothing in your shorty yet</p>
+						<p id="SL-empty-message">Nothing in your shorty yet</p>
 					</main>
 				</div>
 				)
