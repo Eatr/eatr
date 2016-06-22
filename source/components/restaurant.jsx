@@ -95,7 +95,7 @@ class Restaurant extends React.Component {
 										name={restaurant.name}
 										website={restaurant.website} 
 										phone={restaurant.phone} 
-										address={restaurant.address}/> : 
+										address={restaurant.address} /> : 
 									null
 								}
 						</div>

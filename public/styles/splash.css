@@ -80,20 +80,20 @@ html{
 }
 
 @-moz-keyframes feed {
-   from { -moz-transform: translateX(700px); }
-   to { -moz-transform: translateX(50px); }
+   from { -moz-transform: translateX(300px); }
+   to { -moz-transform: translateX(150px); }
 }
 @-webkit-keyframes feed {
-   from { -webkit-transform: translateX(700px); }
-   to { -webkit-transform: translateX(50px); }
+   from { -webkit-transform: translateX(300px); }
+   to { -webkit-transform: translateX(150px); }
 } 
 @-o-keyframes feed {
-   from { -o-transform: translateX(700px); }
-   to { -o-transform: translateX(50px); }
+   from { -o-transform: translateX(300px); }
+   to { -o-transform: translateX(150px); }
 }
 @keyframes feed {
    from { transform: translateX(300px); }
-   to { transform: translateX(140px); }
+   to { transform: translateX(150px); }
 }
 
 .sml {
