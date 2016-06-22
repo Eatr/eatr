@@ -12,5 +12,5 @@ export default (radius) => {
 				() => {reject('nope')}
 			)
 		}
-	})
-}
+	}
+
