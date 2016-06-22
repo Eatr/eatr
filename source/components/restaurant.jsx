@@ -88,10 +88,10 @@ class Restaurant extends React.Component {
 							</div>
 							<div id="description-window">
 								<h3 className="short-details">{restaurant.name}</h3>
-								<h6 className="short-details">{restaurant.distance}m </h6>
+								<h6 className="short-details gray-text">{restaurant.distance}m </h6>
 							</div>
 								{(ShowDetail)? 
-									<Details id="long-details"
+									<Details 
 										name={restaurant.name}
 										website={restaurant.website} 
 										phone={restaurant.phone} 
