@@ -22,8 +22,8 @@
 	  border-radius: 500px;
 	}
 	#SL-nav-icon{
-		height: 48px;
-		width: 72px;
+		height: 58px;
+		width: auto;
 		padding: 20px;
 	  border-radius: 500px;
 	}
@@ -181,12 +181,14 @@
 	/*yeah nah bar*/
 
 	.yeahnah-button{
+
 		-webkit-user-select: none;
 		 cursor: zoom-in;
-		 border: 8px solid #E6E6E6 ;
+		 border: 5px solid #E6E6E6 ;
 		 border-radius: 100%;
 		 width: 50px;
 		 height: auto
+
 	}
 	#yeahnah-container {
 		margin-top: 60px;
@@ -194,8 +196,30 @@
 	  flex-wrap: nowrap;
 	  justify-content: space-around;
 	}
-	
+	/*Filter*/
+	#btn-done{
+		padding: 50px;
+		display: flex;
+		justify-content: center;
+	}
 
+	#SL-done-icon{
+		height: 58px;
+		width: auto;
+		padding: 20px;
+	  border-radius: 500px;
+	  box-shadow: 
+	}
+	#dist-header{
+		padding-top: 50px;
+	}
+	#dist-meter{
+		padding-top: 20px;
+		padding-bottom: 30px;
+	}
+	#filter{
+		text-align: center;
+	}
 }
 
 /* errthang larger than 376 */
@@ -387,7 +411,7 @@
 		.yeahnah-button{
 			-webkit-user-select: none;
 			 cursor: zoom-in;
-			 border: 8px solid #E6E6E6 ;
+			 border: 5px solid #E6E6E6 ;
 			 border-radius: 100%;
 			 width: 50px;
 			 height: auto
