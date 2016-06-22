@@ -21,7 +21,12 @@
 		padding: 20px;
 	  border-radius: 500px;
 	}
-
+	#SL-nav-icon{
+		height: 48px;
+		width: 72px;
+		padding: 20px;
+	  border-radius: 500px;
+	}
 	#navbar {
 		display:flex;
 		flex-wrap: nowrap;
