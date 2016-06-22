@@ -27,7 +27,7 @@ export default class Shortlist extends Component {
 	render () {
 		const shortlist = this.props.shortlist.restaurants
 		if (shortlist.length===0) {
-			console.log('nothing in shortlist')
+			
 			return (
 				<div>
 					<Navbar/>

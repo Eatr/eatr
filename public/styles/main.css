@@ -1,6 +1,11 @@
 
 @media (width:320px){
 
+	#spash-page {
+		text-align: center;
+		display:flex;
+	}
+	
  #yeahnah-container {
  	margin-top: 20px;
  }
@@ -19,13 +24,18 @@
 	flex-direction: column;
 	align-items: center;
 	
-
 	}
-#shortlist #SL-empty-message {
+
+	#spash-page {
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	#shortlist #SL-empty-message {
 		text-align: center;
 		margin-top: 100px;
 
-}
+	}
 
 	/*nav bar*/
 	.nav-icon {

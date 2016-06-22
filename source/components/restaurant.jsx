@@ -45,7 +45,7 @@ class Restaurant extends React.Component {
 	  	user,
 	  	shortlist,
 		  addToShortlist} = this.props
-	    console.log(shortlist, "This is the fucking beast.")
+	   
 	  if(this.nextPage){
 		    user.name ? updateServer(shortlist, restaurant) : null
 		    addToShortlist(restaurant)
