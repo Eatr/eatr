@@ -12,7 +12,7 @@ export default class YeahNahBar extends React.Component {
       <div id="yeahnah-container">
       <button 
         onClick={() => reject(restaurant.index+1)} 
-        id="nope">
+        id="yeahnah">
           <img className="yeahnah-button" src="./images/nope.png" alt="nope"/>
       </button>
       <Navlink to='/shortlist'>
@@ -20,7 +20,7 @@ export default class YeahNahBar extends React.Component {
       </Navlink>
       <button 
         onClick={() => add(restaurant.index+1,restaurant.restaurant)} 
-        id="yeah">
+        id="yeahnah">
           <img className="yeahnah-button" src="./images/like.png" alt="yeah"/>
       </button>
       </div>

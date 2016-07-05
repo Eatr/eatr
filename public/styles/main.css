@@ -215,18 +215,13 @@
 }
 	/*yeah nah bar*/
 
-	.yeahnah-button{
+	
 
-		-webkit-user-select: none;
-		 cursor: zoom-in;
-		 border: 5px solid #E6E6E6 ;
-		 border-radius: 100%;
-		 width: 50px;
-		 height: auto
 
-	}
 
-	.shortlist-restaurant #nope .yeahnah-button{
+
+
+	.shortlist-restaurant #nope {
 		-webkit-user-select: none;
 		 cursor: zoom-in;
 		 border: 5px solid #E6E6E6 ;
@@ -327,8 +322,8 @@
 		  border-radius: 500px;
 		}
 		#SL-nav-icon{
-			height: 48px;
-			width: 72px;
+			height: 58px;
+			width: auto;
 			padding: 20px;
 		  border-radius: 500px;
 		}
@@ -475,16 +470,7 @@
 	}
 		/*yeah nah bar*/
 
-		.yeahnah-button{
-			-webkit-user-select: none;
-			 cursor: zoom-in;
-			 border: 5px solid #E6E6E6 ;
-			 border-radius: 100%;
-			 width: 50px;
-			 height: auto
-		}
-
-		.shortlist-restaurant #nope .yeahnah-button{
+		.shortlist-restaurant #nope {
 			-webkit-user-select: none;
 			 cursor: zoom-in;
 			 border: 5px solid #E6E6E6 ;
@@ -531,6 +517,18 @@
 			align-items: center;
 			flex-direction: column;
 		}
+}
 
-
+#yeahnah{
+	background-color: white;
+	border: none;
+}
+.yeahnah-button{
+	cursor: zoom-in;
+	border: 5px solid #E6E6E6;
+	border-radius: 100%;
+	width: 50px;
+	height: auto;
+	background-color: white;
+	border: none;
 }
