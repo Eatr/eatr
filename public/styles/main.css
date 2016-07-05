@@ -237,12 +237,7 @@
 	  justify-content: space-around;
 	}
 	/*Filter*/
-	#btn-done{
-		padding: 50px;
-		display: flex;
-		justify-content: center;
-		background-color: white;
-	}
+
 
 /*	#SL-done-icon{
 		height: 58px;
@@ -524,8 +519,7 @@
 	border: none;
 	height: 58px;
 	width: auto;
-	margin-left: auto;
-	margin-right: auto;
+	align-items: 
 }
 #yeahnah{
 	background-color: white;
@@ -545,4 +539,14 @@
 		width: auto;
 		padding: 20px;
 	  border-radius: 500px;
+	}
+button {
+	background-color: white;
+	border: none;
+}
+	#btn-done{
+		padding: 50px;
+		display: flex;
+		justify-content: center;
+		background-color: white;
 	}
