@@ -76,6 +76,7 @@ class Restaurant extends React.Component {
 
 		const {restaurant, index, ShowDetail } = this.props.restaurant
 		const {changeViewDetail} = this.props
+		console.log(restaurant)
 
 
 			if (this.nextPage) {
