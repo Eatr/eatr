@@ -9,7 +9,7 @@ html{
 }
 
 .pacman-top{
-  margin-top: 185px;
+  margin-top: 105px;
   transform-origin: bottom left; 
   margin-bottom: -5px;
   height:50px;
@@ -19,7 +19,7 @@ html{
 }
 
 .pacman-bottom{
-  top: 285px;
+  top: 205px;
   transform-origin: top left; 
   z-index:-1; 
   height:50px;
@@ -80,26 +80,26 @@ html{
 }
 
 @-moz-keyframes feed {
-   from { -moz-transform: translateX(700px); }
-   to { -moz-transform: translateX(50px); }
+   from { -moz-transform: translateX(300px); }
+   to { -moz-transform: translateX(150px); }
 }
 @-webkit-keyframes feed {
-   from { -webkit-transform: translateX(700px); }
-   to { -webkit-transform: translateX(50px); }
+   from { -webkit-transform: translateX(300px); }
+   to { -webkit-transform: translateX(150px); }
 } 
 @-o-keyframes feed {
-   from { -o-transform: translateX(700px); }
-   to { -o-transform: translateX(50px); }
+   from { -o-transform: translateX(300px); }
+   to { -o-transform: translateX(150px); }
 }
 @keyframes feed {
    from { transform: translateX(300px); }
-   to { transform: translateX(140px); }
+   to { transform: translateX(150px); }
 }
 
 .sml {
    z-index: -1;
    padding: 5px;
-   top: 285px;
+   top: 305px;
    left: -55px;
    -moz-animation-duration: 6s;
    -webkit-animation-duration: 6s;
@@ -112,7 +112,7 @@ html{
 .lrg {
   z-index: -1;
   padding: 5px;
-   top: 285px;
+   top: 305px;
    left: -55px;
    -moz-animation-duration: 6s;
    -webkit-animation-duration: 6s;
@@ -123,7 +123,7 @@ html{
 .med {
   z-index: -1;
   padding: 5px;
-   top: 285px;
+   top: 305px;
    left: -55px;
    -moz-animation-duration: 6s;
    -webkit-animation-duration: 6s;

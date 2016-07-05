@@ -88,8 +88,9 @@ export default (state = INITIALSTATE, action) => {
 			newState.Restaurant = {
 				index: 0,
 				restaurant: action.restaurant,
-				ShowDetail: true
+				ShowDetail: false
 			}
+			return newState
 
 		default :
 			return state
