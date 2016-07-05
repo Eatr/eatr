@@ -224,8 +224,8 @@
 	.shortlist-restaurant #nope {
 		-webkit-user-select: none;
 		 cursor: zoom-in;
-		 border: 5px solid #E6E6E6 ;
-		 border-radius: 100%;
+		 background-color: white;
+		 border: none;
 		 width: 30px;
 		 height: auto
 	}
@@ -241,15 +241,15 @@
 		padding: 50px;
 		display: flex;
 		justify-content: center;
+		background-color: white;
 	}
 
-	#SL-done-icon{
+/*	#SL-done-icon{
 		height: 58px;
 		width: auto;
 		padding: 20px;
 	  border-radius: 500px;
-	  box-shadow: 
-	}
+	}*/
 	#dist-header{
 		padding-top: 50px;
 	}
@@ -472,9 +472,9 @@
 
 		.shortlist-restaurant #nope {
 			-webkit-user-select: none;
+			 background-color: white;
+			 border: none;
 			 cursor: zoom-in;
-			 border: 5px solid #E6E6E6 ;
-			 border-radius: 100%;
 			 width: 30px;
 			 height: auto
 		}
@@ -519,6 +519,14 @@
 		}
 }
 
+#done {
+	background-color: white;
+	border: none;
+	height: 58px;
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
 #yeahnah{
 	background-color: white;
 	border: none;
@@ -532,3 +540,9 @@
 	background-color: white;
 	border: none;
 }
+#SL-done-icon{
+		height: 58px;
+		width: auto;
+		padding: 20px;
+	  border-radius: 500px;
+	}

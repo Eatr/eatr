@@ -29,7 +29,7 @@ class Filter extends Component {
         <Navbar />
         <DistanceContainer />
         <Navlink to='/' id="btn-done">
-          <button onClick={ () => (this.handleClick()) }>
+          <button id="done" onClick={ () => (this.handleClick()) }>
            <img id="SL-done-icon" src="./images/shortlist-icon.png" alt="shortlist"/>
           </button>
         </Navlink>
