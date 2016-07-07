@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import * as actionCreators from '../action-creators'
-import {connect} from 'react-redux'
-import Slider from 'rc-slider'
-import Navlink from './navlink.jsx'
-import {PriceContainer} from './price.jsx'
-import {DistanceContainer} from './distance.jsx'
-import Navbar from './navbar.jsx'
+import * as actionCreators  from '../action-creators'
+import {connect}            from 'react-redux'
+import Slider               from 'rc-slider'
+import Navlink              from './navlink.jsx'
+import {PriceContainer}     from './price.jsx'
+import {DistanceContainer}  from './distance.jsx'
+import Navbar               from './navbar.jsx'
 
 export class Filter extends Component {
 

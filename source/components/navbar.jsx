@@ -1,7 +1,7 @@
-import React from 'react'
+import React    from 'react'
 import { Link } from 'react-router'
-import Logo from './logo.jsx'
-import Navlink from './navlink.jsx'
+import Logo     from './logo.jsx'
+import Navlink  from './navlink.jsx'
 
 export default () => {
 
