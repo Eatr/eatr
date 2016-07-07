@@ -7,7 +7,7 @@ import {PriceContainer} from './price.jsx'
 import {DistanceContainer} from './distance.jsx'
 import Navbar from './navbar.jsx'
 
-class Filter extends Component {
+export class Filter extends Component {
 
   componentWillMount() {
     this.userPref = Object.assign({}, this.props.preferences)
@@ -33,7 +33,6 @@ class Filter extends Component {
            <img id="SL-done-icon" src="./images/shortlist-icon.png" alt="shortlist"/>
           </button>
         </Navlink>
-        
       </div>
     )
   }

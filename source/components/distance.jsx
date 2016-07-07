@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import Slider from 'rc-slider'
 
 
-class Distance extends React.Component {
+export class Distance extends React.Component {
  distanceChange(value) {
     const newPrefs = Object.assign({}, this.props.preferences)
     newPrefs.distance = value

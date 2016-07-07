@@ -8,7 +8,7 @@
     "dev:server": "nodemon index.js --exec babel-node --presets es2015,stage-2",
     "test:db": "babel-node test/unit/database.js --babel-node --presets es2015,stage-2",
     "test": "clear && babel-tape-runner tests/reducer-tests.js | tap-spec ",
-    "test:components": "mocha test/unit/components/.setup.js test/unit/components/*-test.js",
+    "test:components": "mocha test/unit/components/.setup.js test/unit/components/*-test.js --watch",
     "build": "browserify source/index.js -o public/bundle.js -t babelify",
     "start:dev": "clear & npm-run-all -p dev:*",
     "start": "babel-node index.js --presets es2015,stage-2"
