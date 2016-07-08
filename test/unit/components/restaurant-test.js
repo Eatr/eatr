@@ -5,7 +5,7 @@ import RestaurantDetails						from '../../../source/components/restaurant-detail
 import {Restaurant}									from '../../../source/components/restaurant.jsx'
 import Swipeable 										from 'react-swipeable'
 
-describe('The Restaurant component', () => {
+describe('The basic Restaurant component', () => {
 	const props = {
 		restaurant: {
 			restaurant: { 
