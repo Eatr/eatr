@@ -6,7 +6,7 @@ import Navbar 							from './navbar.jsx'
 import updateServer 				from '../helpers/update-server.js'
 import Swipeable 						from 'react-swipeable'
 
-export default class Shortlist extends Component {
+export class Shortlist extends Component {
 	constructor(props) {
 		super(props)
 	}
@@ -53,7 +53,11 @@ export default class Shortlist extends Component {
 										<img className="yeahnah-button" src="./images/nope.png" alt="nope"/>
 									</button>
 									
-										<p onClick={() => {this.showRestaurant(restaurant)}} className="SL-detail">{restaurant.name}</p>
+										<p 
+										onClick={() => {this.showRestaurant(restaurant)}} 
+										className="SL-detail">
+											{restaurant.name}
+										</p>
 										
 								
 								</div>

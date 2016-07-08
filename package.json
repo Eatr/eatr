@@ -29,7 +29,6 @@
   "bugs": {
     "url": "https://github.com/Eatr/eatr/issues"
   },
-  "homepage": "https://github.com/Eatr/eatr#readme",
   "devDependencies": {
     "blue-tape": "^0.2.0",
     "browserify": "^13.0.1",
