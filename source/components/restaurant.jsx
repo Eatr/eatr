@@ -9,7 +9,7 @@ import getMoreRestaurants 	from '../helpers/get-more-restaurants.js'
 import * as actionCreators 	from '../action-creators';
 import Splash								from './splash.jsx'
 
-class Restaurant extends React.Component {
+export class Restaurant extends React.Component {
 
 	constructor(props) {
 		super(props)

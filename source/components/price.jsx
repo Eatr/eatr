@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import Slider from 'rc-slider'
 
 
-class Price extends Component {
+export class Price extends Component {
 
   priceChange(value) {
     const newPrefs = Object.assign({}, this.props.preferences)
@@ -15,7 +15,7 @@ class Price extends Component {
   render() {
     return (
       <div>
-        <h4>Price: {this.props.preferences.price}</h4>
+        <h4>Price: ${this.props.preferences.price}</h4>
         <Slider id='price' step={10} min={20} max={100} defaultValue={this.props.preferences.price}
           onChange={(val) =>{this.priceChange(val)}}/>
       </div>
