@@ -11,10 +11,10 @@ describe('The Filter component', () => {
 		expect(wrapper.find('button')).to.have.length(1)
 		assert.typeOf(wrapper.find('button').props().onClick, 'function')
 		expect(wrapper.find('img')).to.have.length(1)
-		assert.equal(wrapper.containsAllMatchingElements([
+		assert(wrapper.containsAllMatchingElements([
 			<Navbar />,
 			<DistanceContainer />],
-			), true)
+			))
 	})
 
 })

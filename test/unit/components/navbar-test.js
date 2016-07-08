@@ -10,8 +10,8 @@ describe('The Navbar compnent', () => {
 		const wrapper = shallow(<Navbar />)
 		expect(wrapper.find('img')).to.have.length(2)
 		expect(wrapper.find(Navlink)).to.have.length(2)
-		expect(wrapper.containsMatchingElement(
+		assert(wrapper.containsMatchingElement(
 				<Navlink><img/></Navlink>
-			)).to.equal(true)
+			))
 	})
 })

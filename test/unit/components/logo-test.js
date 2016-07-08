@@ -9,7 +9,7 @@ describe('Logo component', () => {
 		const wrapper = shallow(<Logo />)
 		expect(wrapper.find(Navlink)).to.have.length(1)
 		expect(wrapper.find('img')).to.have.length(1)
-		assert.equal(wrapper.containsMatchingElement(
-			<Navlink><img/></Navlink>),true)
+		assert(wrapper.containsMatchingElement(
+			<Navlink><img/></Navlink>))
 	})
 })
