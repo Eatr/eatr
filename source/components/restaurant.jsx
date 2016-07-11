@@ -56,7 +56,7 @@ export class Restaurant extends React.Component {
 		  		.then(updateRestaurants)
 		  		.then( () => {
 						this.nextPage = false
-						changeRestaurant(0)  // to trigger prop change fucking P.O.S.
+						changeRestaurant(0)  
 						})
 	  	} else {
 	  		user.name ? updateServer(shortlist, restaurant) : null

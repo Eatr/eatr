@@ -4,7 +4,7 @@
   "description": "Find nice places to eat with a tinder like interface",
   "main": "index.js",
   "scripts": {
-    "dev:watch": "watchify source/index.js -o public/bundle.js -dv -t babelify",
+    "dev:watch": "clear && watchify source/index.js -o public/bundle.js -dv -t babelify",
     "dev:server": "nodemon index.js --exec babel-node --presets es2015,stage-2",
     "test:db": "babel-node test/unit/database.js --babel-node --presets es2015,stage-2",
     "test": "clear && babel-tape-runner tests/reducer-tests.js | tap-spec ",
@@ -80,6 +80,7 @@
     "react-router": "^2.4.1",
     "react-swipeable": "^3.5.0",
     "redux": "^3.5.2",
+    "sinon": "^1.17.4",
     "sqlite3": "^3.1.4",
     "superagent": "^2.0.0"
   }

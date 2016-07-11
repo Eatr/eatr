@@ -521,7 +521,12 @@
 	width: auto;
 	align-items: 
 }
-#yeahnah{
+#yeah{
+	background-color: white;
+	border: none;
+}
+
+#nah {
 	background-color: white;
 	border: none;
 }
