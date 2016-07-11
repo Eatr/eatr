@@ -9,7 +9,7 @@ import getMoreRestaurants 	from '../helpers/get-more-restaurants.js'
 import * as actionCreators 	from '../action-creators';
 import Splash								from './splash.jsx'
 
-class Restaurant extends React.Component {
+export class Restaurant extends React.Component {
 
 	constructor(props) {
 		super(props)
@@ -56,7 +56,7 @@ class Restaurant extends React.Component {
 		  		.then(updateRestaurants)
 		  		.then( () => {
 						this.nextPage = false
-						changeRestaurant(0)  // to trigger prop change fucking P.O.S.
+						changeRestaurant(0)  
 						})
 	  	} else {
 	  		user.name ? updateServer(shortlist, restaurant) : null
@@ -76,8 +76,6 @@ class Restaurant extends React.Component {
 
 		const {restaurant, index, ShowDetail } = this.props.restaurant
 		const {changeViewDetail} = this.props
-		console.log(restaurant)
-
 
 			if (this.nextPage) {
 				return (<Splash />)

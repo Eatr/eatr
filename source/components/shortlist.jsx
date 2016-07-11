@@ -6,7 +6,7 @@ import Navbar 							from './navbar.jsx'
 import updateServer 				from '../helpers/update-server.js'
 import Swipeable 						from 'react-swipeable'
 
-export default class Shortlist extends Component {
+export class Shortlist extends Component {
 	constructor(props) {
 		super(props)
 	}
@@ -40,20 +40,26 @@ export default class Shortlist extends Component {
 				<div>
 					<Navbar/>
 					<main id='shortlist'>
-					{shortlist.map((restaurant) => {
+					{shortlist.map((restaurant, i) => {
 						return (
 							<Swipeable
 								delta={50}
 								onSwipedLeft={() => this.handleClick(restaurant)}
+								key={i}
 							>
 								<div	className="shortlist-restaurant">
 									<button 
+										ref={i}
 										id="nope" 
 										onClick={()=>{this.handleClick(restaurant)}}>
 										<img className="yeahnah-button" src="./images/nope.png" alt="nope"/>
 									</button>
 									
-										<p onClick={() => {this.showRestaurant(restaurant)}} className="SL-detail">{restaurant.name}</p>
+										<p 
+										onClick={() => {this.showRestaurant(restaurant)}} 
+										className="SL-detail">
+											{restaurant.name}
+										</p>
 										
 								
 								</div>

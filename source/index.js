@@ -1,15 +1,17 @@
-import { Router, Route, browserHistory, IndexRoute } from 'react-router'
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import {AppContainer} from './components/app.jsx'
-import Home from './components/home.jsx'
-import {FilterContainer} from './components/filter.jsx'
+import { 
+	Router, 
+	Route, 
+	browserHistory, 
+	IndexRoute} 							from 'react-router'
+import React 								from 'react'
+import ReactDOM 	from 'react-dom'
+import {Provider} 					from 'react-redux'
+import {createStore} 				from 'redux'
+import {AppContainer} 			from './components/app.jsx'
+import {FilterContainer} 		from './components/filter.jsx'
 import {ShortlistContainer} from './components/shortlist.jsx'
-import {LoginContainer} from './components/modal-login.jsx'
-import reducer from './reducer.js'
-import ReactDOM from 'react-dom'
+import {LoginContainer} 		from './components/modal-login.jsx'
+import reducer 							from './reducer.js'
 
 const store = createStore(reducer)
 

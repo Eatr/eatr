@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import * as actionCreators from '../action-creators'
-import {connect} from 'react-redux'
-import Slider from 'rc-slider'
-import Navlink from './navlink.jsx'
-import {PriceContainer} from './price.jsx'
-import {DistanceContainer} from './distance.jsx'
-import Navbar from './navbar.jsx'
+import * as actionCreators  from '../action-creators'
+import {connect}            from 'react-redux'
+import Slider               from 'rc-slider'
+import Navlink              from './navlink.jsx'
+import {PriceContainer}     from './price.jsx'
+import {DistanceContainer}  from './distance.jsx'
+import Navbar               from './navbar.jsx'
 
-class Filter extends Component {
+export class Filter extends Component {
 
   componentWillMount() {
     this.userPref = Object.assign({}, this.props.preferences)
@@ -33,7 +33,6 @@ class Filter extends Component {
            <img id="SL-done-icon" src="./images/shortlist-icon.png" alt="shortlist"/>
           </button>
         </Navlink>
-        
       </div>
     )
   }

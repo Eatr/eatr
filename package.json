@@ -4,10 +4,11 @@
   "description": "Find nice places to eat with a tinder like interface",
   "main": "index.js",
   "scripts": {
-    "dev:watch": "watchify source/index.js -o public/bundle.js -dv -t babelify",
+    "dev:watch": "clear && watchify source/index.js -o public/bundle.js -dv -t babelify",
     "dev:server": "nodemon index.js --exec babel-node --presets es2015,stage-2",
     "test:db": "babel-node test/unit/database.js --babel-node --presets es2015,stage-2",
     "test": "clear && babel-tape-runner tests/reducer-tests.js | tap-spec ",
+    "test:components": "mocha test/unit/components/.setup.js test/unit/components/*-test.js --watch",
     "build": "browserify source/index.js -o public/bundle.js -t babelify",
     "start:dev": "clear & npm-run-all -p dev:*",
     "start": "babel-node index.js --presets es2015,stage-2"
@@ -28,12 +29,13 @@
   "bugs": {
     "url": "https://github.com/Eatr/eatr/issues"
   },
-  "homepage": "https://github.com/Eatr/eatr#readme",
   "devDependencies": {
     "blue-tape": "^0.2.0",
     "browserify": "^13.0.1",
+    "enzyme": "^2.3.0",
     "nock": "^8.0.0",
     "nodemon": "^1.9.2",
+    "react-addons-test-utils": "^15.2.0",
     "redtape": "^1.0.0",
     "supertest": "^1.2.0",
     "tap-spec": "^4.1.1",
@@ -46,10 +48,12 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-2": "^6.5.0",
+    "babel-register": "^6.9.0",
     "babel-tape-runner": "^2.0.1",
     "babelify": "^7.3.0",
     "body-parser": "^1.15.1",
     "browser-request": "^0.3.3",
+    "chai": "^3.5.0",
     "clone": "^1.0.2",
     "connect-session-knex": "^1.0.23",
     "cookie-parser": "^1.4.3",
@@ -58,7 +62,9 @@
     "express-session": "^1.13.0",
     "geolib": "^2.0.21",
     "heroku-ssl-redirect": "0.0.3",
+    "jsdom": "^9.4.1",
     "knex": "^0.11.5",
+    "mocha": "^2.5.3",
     "node-uuid": "^1.4.7",
     "npm-run-all": "^2.1.2",
     "passport": "^0.3.2",
@@ -74,6 +80,7 @@
     "react-router": "^2.4.1",
     "react-swipeable": "^3.5.0",
     "redux": "^3.5.2",
+    "sinon": "^1.17.4",
     "sqlite3": "^3.1.4",
     "superagent": "^2.0.0"
   }
