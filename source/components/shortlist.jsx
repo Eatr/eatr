@@ -40,14 +40,16 @@ export class Shortlist extends Component {
 				<div>
 					<Navbar/>
 					<main id='shortlist'>
-					{shortlist.map((restaurant) => {
+					{shortlist.map((restaurant, i) => {
 						return (
 							<Swipeable
 								delta={50}
 								onSwipedLeft={() => this.handleClick(restaurant)}
+								key={i}
 							>
 								<div	className="shortlist-restaurant">
 									<button 
+										ref={i}
 										id="nope" 
 										onClick={()=>{this.handleClick(restaurant)}}>
 										<img className="yeahnah-button" src="./images/nope.png" alt="nope"/>
