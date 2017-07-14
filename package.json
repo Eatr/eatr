@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Find nice places to eat with a tinder like interface",
   "main": "index.js",
+  "engines": {
+    "node": "6.11.1"
+  },
   "scripts": {
     "dev:watch": "clear && watchify source/index.js -o public/bundle.js -dv -t babelify",
     "dev:server": "nodemon index.js --exec babel-node --presets es2015,stage-2",
